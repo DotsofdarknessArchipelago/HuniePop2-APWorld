@@ -9,7 +9,7 @@ from .Items import item_table, HP2Item, fairy_wings_table, gift_unique_table, gi
 
 from .Locations import location_table, HP2Location, shoe_item_locaion_table, unique_item_location_table
 from .Options import HP2Options
-from ..generic.Rules import forbid_item
+from ..generic.Rules import forbid_item, add_rule
 
 
 class HuniePop2(World):
@@ -659,7 +659,198 @@ class HuniePop2(World):
         self.multiworld.get_location("boss_location", self.player).place_locked_item(self.create_item("Victory"))
         self.multiworld.completion_condition[self.player] = lambda state: state.has("Victory", self.player)
 
-
+        add_rule(self.multiworld.get_location("lola unique item 1", self.player),
+                 lambda state: state.has("lola unique item 1", self.player))
+        add_rule(self.multiworld.get_location("lola unique item 2", self.player),
+                 lambda state: state.has("lola unique item 2", self.player))
+        add_rule(self.multiworld.get_location("lola unique item 3", self.player),
+                 lambda state: state.has("lola unique item 3", self.player))
+        add_rule(self.multiworld.get_location("lola unique item 4", self.player),
+                 lambda state: state.has("lola unique item 4", self.player))
+        add_rule(self.multiworld.get_location("jessie unique item 1", self.player),
+                 lambda state: state.has("jessie unique item 1", self.player))
+        add_rule(self.multiworld.get_location("jessie unique item 2", self.player),
+                 lambda state: state.has("jessie unique item 2", self.player))
+        add_rule(self.multiworld.get_location("jessie unique item 3", self.player),
+                 lambda state: state.has("jessie unique item 3", self.player))
+        add_rule(self.multiworld.get_location("jessie unique item 4", self.player),
+                 lambda state: state.has("jessie unique item 4", self.player))
+        add_rule(self.multiworld.get_location("lillian unique item 1", self.player),
+                 lambda state: state.has("lillian unique item 1", self.player))
+        add_rule(self.multiworld.get_location("lillian unique item 2", self.player),
+                 lambda state: state.has("lillian unique item 2", self.player))
+        add_rule(self.multiworld.get_location("lillian unique item 3", self.player),
+                 lambda state: state.has("lillian unique item 3", self.player))
+        add_rule(self.multiworld.get_location("lillian unique item 4", self.player),
+                 lambda state: state.has("lillian unique item 4", self.player))
+        add_rule(self.multiworld.get_location("zoey unique item 1", self.player),
+                 lambda state: state.has("zoey unique item 1", self.player))
+        add_rule(self.multiworld.get_location("zoey unique item 2", self.player),
+                 lambda state: state.has("zoey unique item 2", self.player))
+        add_rule(self.multiworld.get_location("zoey unique item 3", self.player),
+                 lambda state: state.has("zoey unique item 3", self.player))
+        add_rule(self.multiworld.get_location("zoey unique item 4", self.player),
+                 lambda state: state.has("zoey unique item 4", self.player))
+        add_rule(self.multiworld.get_location("sarah unique item 1", self.player),
+                 lambda state: state.has("sarah unique item 1", self.player))
+        add_rule(self.multiworld.get_location("sarah unique item 2", self.player),
+                 lambda state: state.has("sarah unique item 2", self.player))
+        add_rule(self.multiworld.get_location("sarah unique item 3", self.player),
+                 lambda state: state.has("sarah unique item 3", self.player))
+        add_rule(self.multiworld.get_location("sarah unique item 4", self.player),
+                 lambda state: state.has("sarah unique item 4", self.player))
+        add_rule(self.multiworld.get_location("lailani unique item 1", self.player),
+                 lambda state: state.has("lailani unique item 1", self.player))
+        add_rule(self.multiworld.get_location("lailani unique item 2", self.player),
+                 lambda state: state.has("lailani unique item 2", self.player))
+        add_rule(self.multiworld.get_location("lailani unique item 3", self.player),
+                 lambda state: state.has("lailani unique item 3", self.player))
+        add_rule(self.multiworld.get_location("lailani unique item 4", self.player),
+                 lambda state: state.has("lailani unique item 4", self.player))
+        add_rule(self.multiworld.get_location("candace unique item 1", self.player),
+                 lambda state: state.has("candace unique item 1", self.player))
+        add_rule(self.multiworld.get_location("candace unique item 2", self.player),
+                 lambda state: state.has("candace unique item 2", self.player))
+        add_rule(self.multiworld.get_location("candace unique item 3", self.player),
+                 lambda state: state.has("candace unique item 3", self.player))
+        add_rule(self.multiworld.get_location("candace unique item 4", self.player),
+                 lambda state: state.has("candace unique item 4", self.player))
+        add_rule(self.multiworld.get_location("nora unique item 1", self.player),
+                 lambda state: state.has("nora unique item 1", self.player))
+        add_rule(self.multiworld.get_location("nora unique item 2", self.player),
+                 lambda state: state.has("nora unique item 2", self.player))
+        add_rule(self.multiworld.get_location("nora unique item 3", self.player),
+                 lambda state: state.has("nora unique item 3", self.player))
+        add_rule(self.multiworld.get_location("nora unique item 4", self.player),
+                 lambda state: state.has("nora unique item 4", self.player))
+        add_rule(self.multiworld.get_location("brooke unique item 1", self.player),
+                 lambda state: state.has("brooke unique item 1", self.player))
+        add_rule(self.multiworld.get_location("brooke unique item 2", self.player),
+                 lambda state: state.has("brooke unique item 2", self.player))
+        add_rule(self.multiworld.get_location("brooke unique item 3", self.player),
+                 lambda state: state.has("brooke unique item 3", self.player))
+        add_rule(self.multiworld.get_location("brooke unique item 4", self.player),
+                 lambda state: state.has("brooke unique item 4", self.player))
+        add_rule(self.multiworld.get_location("ashley unique item 1", self.player),
+                 lambda state: state.has("ashley unique item 1", self.player))
+        add_rule(self.multiworld.get_location("ashley unique item 2", self.player),
+                 lambda state: state.has("ashley unique item 2", self.player))
+        add_rule(self.multiworld.get_location("ashley unique item 3", self.player),
+                 lambda state: state.has("ashley unique item 3", self.player))
+        add_rule(self.multiworld.get_location("ashley unique item 4", self.player),
+                 lambda state: state.has("ashley unique item 4", self.player))
+        add_rule(self.multiworld.get_location("abia unique item 1", self.player),
+                 lambda state: state.has("abia unique item 1", self.player))
+        add_rule(self.multiworld.get_location("abia unique item 2", self.player),
+                 lambda state: state.has("abia unique item 2", self.player))
+        add_rule(self.multiworld.get_location("abia unique item 3", self.player),
+                 lambda state: state.has("abia unique item 3", self.player))
+        add_rule(self.multiworld.get_location("abia unique item 4", self.player),
+                 lambda state: state.has("abia unique item 4", self.player))
+        add_rule(self.multiworld.get_location("polly unique item 1", self.player),
+                 lambda state: state.has("polly unique item 1", self.player))
+        add_rule(self.multiworld.get_location("polly unique item 2", self.player),
+                 lambda state: state.has("polly unique item 2", self.player))
+        add_rule(self.multiworld.get_location("polly unique item 3", self.player),
+                 lambda state: state.has("polly unique item 3", self.player))
+        add_rule(self.multiworld.get_location("polly unique item 4", self.player),
+                 lambda state: state.has("polly unique item 4", self.player))
+        add_rule(self.multiworld.get_location("lola shoe item 1", self.player),
+                 lambda state: state.has("lola shoe item 1", self.player))
+        add_rule(self.multiworld.get_location("lola shoe item 2", self.player),
+                 lambda state: state.has("lola shoe item 2", self.player))
+        add_rule(self.multiworld.get_location("lola shoe item 3", self.player),
+                 lambda state: state.has("lola shoe item 3", self.player))
+        add_rule(self.multiworld.get_location("lola shoe item 4", self.player),
+                 lambda state: state.has("lola shoe item 4", self.player))
+        add_rule(self.multiworld.get_location("jessie shoe item 1", self.player),
+                 lambda state: state.has("jessie shoe item 1", self.player))
+        add_rule(self.multiworld.get_location("jessie shoe item 2", self.player),
+                 lambda state: state.has("jessie shoe item 2", self.player))
+        add_rule(self.multiworld.get_location("jessie shoe item 3", self.player),
+                 lambda state: state.has("jessie shoe item 3", self.player))
+        add_rule(self.multiworld.get_location("jessie shoe item 4", self.player),
+                 lambda state: state.has("jessie shoe item 4", self.player))
+        add_rule(self.multiworld.get_location("lillian shoe item 1", self.player),
+                 lambda state: state.has("lillian shoe item 1", self.player))
+        add_rule(self.multiworld.get_location("lillian shoe item 2", self.player),
+                 lambda state: state.has("lillian shoe item 2", self.player))
+        add_rule(self.multiworld.get_location("lillian shoe item 3", self.player),
+                 lambda state: state.has("lillian shoe item 3", self.player))
+        add_rule(self.multiworld.get_location("lillian shoe item 4", self.player),
+                 lambda state: state.has("lillian shoe item 4", self.player))
+        add_rule(self.multiworld.get_location("zoey shoe item 1", self.player),
+                 lambda state: state.has("zoey shoe item 1", self.player))
+        add_rule(self.multiworld.get_location("zoey shoe item 2", self.player),
+                 lambda state: state.has("zoey shoe item 2", self.player))
+        add_rule(self.multiworld.get_location("zoey shoe item 3", self.player),
+                 lambda state: state.has("zoey shoe item 3", self.player))
+        add_rule(self.multiworld.get_location("zoey shoe item 4", self.player),
+                 lambda state: state.has("zoey shoe item 4", self.player))
+        add_rule(self.multiworld.get_location("sarah shoe item 1", self.player),
+                 lambda state: state.has("sarah shoe item 1", self.player))
+        add_rule(self.multiworld.get_location("sarah shoe item 2", self.player),
+                 lambda state: state.has("sarah shoe item 2", self.player))
+        add_rule(self.multiworld.get_location("sarah shoe item 3", self.player),
+                 lambda state: state.has("sarah shoe item 3", self.player))
+        add_rule(self.multiworld.get_location("sarah shoe item 4", self.player),
+                 lambda state: state.has("sarah shoe item 4", self.player))
+        add_rule(self.multiworld.get_location("lailani shoe item 1", self.player),
+                 lambda state: state.has("lailani shoe item 1", self.player))
+        add_rule(self.multiworld.get_location("lailani shoe item 2", self.player),
+                 lambda state: state.has("lailani shoe item 2", self.player))
+        add_rule(self.multiworld.get_location("lailani shoe item 3", self.player),
+                 lambda state: state.has("lailani shoe item 3", self.player))
+        add_rule(self.multiworld.get_location("lailani shoe item 4", self.player),
+                 lambda state: state.has("lailani shoe item 4", self.player))
+        add_rule(self.multiworld.get_location("candace shoe item 1", self.player),
+                 lambda state: state.has("candace shoe item 1", self.player))
+        add_rule(self.multiworld.get_location("candace shoe item 2", self.player),
+                 lambda state: state.has("candace shoe item 2", self.player))
+        add_rule(self.multiworld.get_location("candace shoe item 3", self.player),
+                 lambda state: state.has("candace shoe item 3", self.player))
+        add_rule(self.multiworld.get_location("candace shoe item 4", self.player),
+                 lambda state: state.has("candace shoe item 4", self.player))
+        add_rule(self.multiworld.get_location("nora shoe item 1", self.player),
+                 lambda state: state.has("nora shoe item 1", self.player))
+        add_rule(self.multiworld.get_location("nora shoe item 2", self.player),
+                 lambda state: state.has("nora shoe item 2", self.player))
+        add_rule(self.multiworld.get_location("nora shoe item 3", self.player),
+                 lambda state: state.has("nora shoe item 3", self.player))
+        add_rule(self.multiworld.get_location("nora shoe item 4", self.player),
+                 lambda state: state.has("nora shoe item 4", self.player))
+        add_rule(self.multiworld.get_location("brooke shoe item 1", self.player),
+                 lambda state: state.has("brooke shoe item 1", self.player))
+        add_rule(self.multiworld.get_location("brooke shoe item 2", self.player),
+                 lambda state: state.has("brooke shoe item 2", self.player))
+        add_rule(self.multiworld.get_location("brooke shoe item 3", self.player),
+                 lambda state: state.has("brooke shoe item 3", self.player))
+        add_rule(self.multiworld.get_location("brooke shoe item 4", self.player),
+                 lambda state: state.has("brooke shoe item 4", self.player))
+        add_rule(self.multiworld.get_location("ashley shoe item 1", self.player),
+                 lambda state: state.has("ashley shoe item 1", self.player))
+        add_rule(self.multiworld.get_location("ashley shoe item 2", self.player),
+                 lambda state: state.has("ashley shoe item 2", self.player))
+        add_rule(self.multiworld.get_location("ashley shoe item 3", self.player),
+                 lambda state: state.has("ashley shoe item 3", self.player))
+        add_rule(self.multiworld.get_location("ashley shoe item 4", self.player),
+                 lambda state: state.has("ashley shoe item 4", self.player))
+        add_rule(self.multiworld.get_location("abia shoe item 1", self.player),
+                 lambda state: state.has("abia shoe item 1", self.player))
+        add_rule(self.multiworld.get_location("abia shoe item 2", self.player),
+                 lambda state: state.has("abia shoe item 2", self.player))
+        add_rule(self.multiworld.get_location("abia shoe item 3", self.player),
+                 lambda state: state.has("abia shoe item 3", self.player))
+        add_rule(self.multiworld.get_location("abia shoe item 4", self.player),
+                 lambda state: state.has("abia shoe item 4", self.player))
+        add_rule(self.multiworld.get_location("polly shoe item 1", self.player),
+                 lambda state: state.has("polly shoe item 1", self.player))
+        add_rule(self.multiworld.get_location("polly shoe item 2", self.player),
+                 lambda state: state.has("polly shoe item 2", self.player))
+        add_rule(self.multiworld.get_location("polly shoe item 3", self.player),
+                 lambda state: state.has("polly shoe item 3", self.player))
+        add_rule(self.multiworld.get_location("polly shoe item 4", self.player),
+                 lambda state: state.has("polly shoe item 4", self.player))
 
         forbid_item(self.multiworld.get_location("lola unique item 1", self.player), "Unlock Girl(lola)", self.player)
         forbid_item(self.multiworld.get_location("lola unique item 1", self.player), "Pair Unlock (abia/lola)",

@@ -176,7 +176,7 @@ class HuniePop2(World):
             shop_region = Region("Shop Region", self.player, self.multiworld)
             hub_region.connect(shop_region, "hub-shop")
             for i in range(self.shopslots):
-                self.location_name_to_id[f"shop_location: {i+1}"] = 69420506+i
+                #self.location_name_to_id[f"shop_location: {i+1}"] = 69420506+i
                 shop_region.add_locations({f"shop_location: {i+1}" : 69420506+i}, HP2Location)
 
         for pair in self.pair_order:
@@ -418,10 +418,10 @@ class HuniePop2(World):
 
     def fill_slot_data(self) -> dict:
         returndict = {
-            "number_blue_fruit": self.options.number_blue_fruit.value,
-            "number_green_fruit": self.options.number_green_fruit.value,
-            "number_orange_fruit": self.options.number_orange_fruit.value,
-            "number_red_fruit": self.options.number_red_fruit.value,
+            "number_blue_seed": self.options.number_blue_seed.value,
+            "number_green_seed": self.options.number_green_seed.value,
+            "number_orange_seed": self.options.number_orange_seed.value,
+            "number_red_seed": self.options.number_red_seed.value,
             "number_shop_items": self.options.number_shop_items.value,
             "enable_questions": self.options.enable_questions.value,
             "disable_baggage": self.options.disable_baggage.value

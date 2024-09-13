@@ -446,21 +446,116 @@ class HuniePop2(World):
         }
 
         girl_girlpair = {
-            "lola": (("Pair Unlock (abia/lola)", "Unlock Girl(abia)"), ("Pair Unlock (lola/nora)", "Unlock Girl(nora)"), ("Pair Unlock (jessie/lola)", "Unlock Girl(jessie)"), ("Pair Unlock (lola/zoey)", "Unlock Girl(zoey)")),
-            "jessie": (("Pair Unlock (jessie/lailani)", "Unlock Girl(lailani)"), ("Pair Unlock (brooke/jessie)", "Unlock Girl(brooke)"), ("Pair Unlock (jessie/lola)", "Unlock Girl(lola)"), ("Pair Unlock (abia/jessie)", "Unlock Girl(abia)")),
-            "lillian": (("Pair Unlock (ashley/lillian)", "Unlock Girl(ashley)"), ("Pair Unlock (lillian/zoey)", "Unlock Girl(zoey)"), ("Pair Unlock (lailani/lillian)", "Unlock Girl(lailani)"), ("Pair Unlock (abia/lillian)", "Unlock Girl(abia)")),
-            "zoey": (("Pair Unlock (lillian/zoey)", "Unlock Girl(lillian)"), ("Pair Unlock (lola/zoey)", "Unlock Girl(lola)"), ("Pair Unlock (sarah/zoey)", "Unlock Girl(sarah)"), ("Pair Unlock (polly/zoey)", "Unlock Girl(polly)")),
-            "sarah": (("Pair Unlock (lailani/sarah)", "Unlock Girl(lailani)"), ("Pair Unlock (sarah/zoey)", "Unlock Girl(zoey)"), ("Pair Unlock (nora/sarah)", "Unlock Girl(nora)"), ("Pair Unlock (brooke/sarah)", "Unlock Girl(brooke)")),
-            "lailani": (("Pair Unlock (lailani/sarah)", "Unlock Girl(sarah)"), ("Pair Unlock (jessie/lailani)", "Unlock Girl(jessie)"), ("Pair Unlock (lailani/lillian)", "Unlock Girl(lillian)"), ("Pair Unlock (candace/lailani)", "Unlock Girl(candace)")),
-            "candace": (("Pair Unlock (candace/nora)", "Unlock Girl(nora)"), ("Pair Unlock (candace/lailani)", "Unlock Girl(lailani)"), ("Pair Unlock (abia/candace)", "Unlock Girl(abia)"), ("Pair Unlock (candace/polly)", "Unlock Girl(polly)")),
-            "nora": (("Pair Unlock (lola/nora)", "Unlock Girl(lola)"), ("Pair Unlock (candace/nora)", "Unlock Girl(candace)"), ("Pair Unlock (nora/sarah)", "Unlock Girl(sarah)"), ("Pair Unlock (ashley/nora)", "Unlock Girl(ashley)")),
-            "brooke": (("Pair Unlock (brooke/jessie)", "Unlock Girl(jessie)"), ("Pair Unlock (brooke/sarah)", "Unlock Girl(sarah)"), ("Pair Unlock (ashley/brooke)", "Unlock Girl(ashley)"), ("Pair Unlock (brooke/polly)", "Unlock Girl(polly)")),
-            "ashley": (("Pair Unlock (ashley/polly)", "Unlock Girl(polly)"), ("Pair Unlock (ashley/lillian)", "Unlock Girl(lillian)"), ("Pair Unlock (ashley/nora)", "Unlock Girl(nora)"), ("Pair Unlock (ashley/brooke)", "Unlock Girl(brooke)")),
-            "abia": (("Pair Unlock (abia/candace)", "Unlock Girl(candace)"), ("Pair Unlock (abia/lillian)", "Unlock Girl(lillian)"), ("Pair Unlock (abia/lola)", "Unlock Girl(lola)"), ("Pair Unlock (abia/jessie)", "Unlock Girl(jessie)")),
-            "polly": (("Pair Unlock (brooke/polly)", "Unlock Girl(brooke)"), ("Pair Unlock (candace/polly)", "Unlock Girl(candace)"), ("Pair Unlock (polly/zoey)", "Unlock Girl(zoey)"), ("Pair Unlock (ashley/polly)", "Unlock Girl(ashley)"))
+            "lola": (
+                ("Unlock Girl(lola)", "Unlock Girl(abia)", "Pair Unlock (abia/lola)"),
+                ("Unlock Girl(lola)", "Unlock Girl(nora)", "Pair Unlock (lola/nora)"),
+                ("Unlock Girl(lola)", "Unlock Girl(jessie)", "Pair Unlock (jessie/lola)"),
+                ("Unlock Girl(lola)", "Unlock Girl(zoey)", "Pair Unlock (lola/zoey)")),
+            "jessie": (
+                ("Unlock Girl(jessie)", "Unlock Girl(lailani)", "Pair Unlock (jessie/lailani)"),
+                ("Unlock Girl(jessie)", "Unlock Girl(brooke)", "Pair Unlock (brooke/jessie)"),
+                ("Unlock Girl(jessie)", "Unlock Girl(lola)", "Pair Unlock (jessie/lola)"),
+                ("Unlock Girl(jessie)", "Unlock Girl(abia)", "Pair Unlock (abia/jessie)")),
+            "lillian": (
+                ("Unlock Girl(lillian)", "Unlock Girl(ashley)", "Pair Unlock (ashley/lillian)"),
+                ("Unlock Girl(lillian)", "Unlock Girl(zoey)", "Pair Unlock (lillian/zoey)"),
+                ("Unlock Girl(lillian)", "Unlock Girl(lailani)", "Pair Unlock (lailani/lillian)"),
+                ("Unlock Girl(lillian)", "Unlock Girl(abia)", "Pair Unlock (abia/lillian)")),
+            "zoey": (
+                ("Unlock Girl(zoey)", "Unlock Girl(lillian)", "Pair Unlock (lillian/zoey)"),
+                ("Unlock Girl(zoey)", "Unlock Girl(lola)", "Pair Unlock (lola/zoey)"),
+                ("Unlock Girl(zoey)", "Unlock Girl(sarah)", "Pair Unlock (sarah/zoey)"),
+                ("Unlock Girl(zoey)", "Unlock Girl(polly)", "Pair Unlock (polly/zoey)")),
+            "sarah": (
+                ("Unlock Girl(sarah)", "Unlock Girl(lailani)", "Pair Unlock (lailani/sarah)"),
+                ("Unlock Girl(sarah)", "Unlock Girl(zoey)", "Pair Unlock (sarah/zoey)"),
+                ("Unlock Girl(sarah)", "Unlock Girl(nora)", "Pair Unlock (nora/sarah)"),
+                ("Unlock Girl(sarah)", "Unlock Girl(brooke)", "Pair Unlock (brooke/sarah)")),
+            "lailani": (
+                ("Unlock Girl(lailani)", "Unlock Girl(sarah)", "Pair Unlock (lailani/sarah)"),
+                ("Unlock Girl(lailani)", "Unlock Girl(jessie)", "Pair Unlock (jessie/lailani)"),
+                ("Unlock Girl(lailani)", "Unlock Girl(lillian)", "Pair Unlock (lailani/lillian)"),
+                ("Unlock Girl(lailani)", "Unlock Girl(candace)", "Pair Unlock (candace/lailani)")),
+            "candace": (
+                ("Unlock Girl(candace)", "Unlock Girl(nora)", "Pair Unlock (candace/nora)"),
+                ("Unlock Girl(candace)", "Unlock Girl(lailani)", "Pair Unlock (candace/lailani)"),
+                ("Unlock Girl(candace)", "Unlock Girl(abia)", "Pair Unlock (abia/candace)"),
+                ("Unlock Girl(candace)", "Unlock Girl(polly)", "Pair Unlock (candace/polly)")),
+            "nora": (
+                ("Unlock Girl(nora)", "Unlock Girl(lola)", "Pair Unlock (lola/nora)"),
+                ("Unlock Girl(nora)", "Unlock Girl(candace)", "Pair Unlock (candace/nora)"),
+                ("Unlock Girl(nora)", "Unlock Girl(sarah)", "Pair Unlock (nora/sarah)"),
+                ("Unlock Girl(nora)", "Unlock Girl(ashley)", "Pair Unlock (ashley/nora)")),
+            "brooke": (
+                ("Unlock Girl(brooke)", "Unlock Girl(jessie)", "Pair Unlock (brooke/jessie)"),
+                ("Unlock Girl(brooke)", "Unlock Girl(sarah)", "Pair Unlock (brooke/sarah)"),
+                ("Unlock Girl(brooke)", "Unlock Girl(ashley)", "Pair Unlock (ashley/brooke)"),
+                ("Unlock Girl(brooke)", "Unlock Girl(polly)", "Pair Unlock (brooke/polly)")),
+            "ashley": (
+                ("Unlock Girl(ashley)", "Unlock Girl(polly)", "Pair Unlock (ashley/polly)"),
+                ("Unlock Girl(ashley)", "Unlock Girl(lillian)", "Pair Unlock (ashley/lillian)"),
+                ("Unlock Girl(ashley)", "Unlock Girl(nora)", "Pair Unlock (ashley/nora)"),
+                ("Unlock Girl(ashley)", "Unlock Girl(brooke)", "Pair Unlock (ashley/brooke)")),
+            "abia": (
+                ("Unlock Girl(abia)", "Unlock Girl(lola)", "Pair Unlock (abia/lola)"),
+                ("Unlock Girl(abia)", "Unlock Girl(jessie)", "Pair Unlock (abia/jessie)"),
+                ("Unlock Girl(abia)", "Unlock Girl(lillian)", "Pair Unlock (abia/lillian)"),
+                ("Unlock Girl(abia)", "Unlock Girl(candace)", "Pair Unlock (abia/candace)")),
+            "polly": (
+                ("Unlock Girl(polly)", "Unlock Girl(ashley)", "Pair Unlock (ashley/polly)"),
+                ("Unlock Girl(polly)", "Unlock Girl(zoey)", "Pair Unlock (polly/zoey)"),
+                ("Unlock Girl(polly)", "Unlock Girl(candace)", "Pair Unlock (candace/polly)"),
+                ("Unlock Girl(polly)", "Unlock Girl(brooke)", "Pair Unlock (brooke/polly)"))
         }
 
         for girl in self.girls_enabled:
+
+            set_rule(self.multiworld.get_entrance(f"hub-{girl}", self.player), lambda state: (state.has_all(girl_girlpair[girl][0], self.player)))
+            add_rule(self.multiworld.get_entrance(f"hub-{girl}", self.player), lambda state: (state.has_all(girl_girlpair[girl][1], self.player)), "or")
+            add_rule(self.multiworld.get_entrance(f"hub-{girl}", self.player), lambda state: (state.has_all(girl_girlpair[girl][2], self.player)), "or")
+            add_rule(self.multiworld.get_entrance(f"hub-{girl}", self.player), lambda state: (state.has_all(girl_girlpair[girl][3], self.player)), "or")
+
+            set_rule(self.multiworld.get_location(f"{girl} unique gift 1", self.player),lambda state: state.has_all((*girl_girlpair[girl][0], f"{girl} unique item 1"), self.player))
+            add_rule(self.multiworld.get_location(f"{girl} unique gift 1", self.player),lambda state: state.has_all((*girl_girlpair[girl][1], f"{girl} unique item 1"), self.player), "or")
+            add_rule(self.multiworld.get_location(f"{girl} unique gift 1", self.player),lambda state: state.has_all((*girl_girlpair[girl][2], f"{girl} unique item 1"), self.player), "or")
+            add_rule(self.multiworld.get_location(f"{girl} unique gift 1", self.player),lambda state: state.has_all((*girl_girlpair[girl][3], f"{girl} unique item 1"), self.player), "or")
+
+            set_rule(self.multiworld.get_location(f"{girl} unique gift 2", self.player),lambda state: state.has_all((*girl_girlpair[girl][0], f"{girl} unique item 2"), self.player))
+            add_rule(self.multiworld.get_location(f"{girl} unique gift 2", self.player),lambda state: state.has_all((*girl_girlpair[girl][1], f"{girl} unique item 2"), self.player), "or")
+            add_rule(self.multiworld.get_location(f"{girl} unique gift 2", self.player),lambda state: state.has_all((*girl_girlpair[girl][2], f"{girl} unique item 2"), self.player), "or")
+            add_rule(self.multiworld.get_location(f"{girl} unique gift 2", self.player),lambda state: state.has_all((*girl_girlpair[girl][3], f"{girl} unique item 2"), self.player), "or")
+
+            set_rule(self.multiworld.get_location(f"{girl} unique gift 3", self.player),lambda state: state.has_all((*girl_girlpair[girl][0], f"{girl} unique item 3"), self.player))
+            add_rule(self.multiworld.get_location(f"{girl} unique gift 3", self.player),lambda state: state.has_all((*girl_girlpair[girl][1], f"{girl} unique item 3"), self.player), "or")
+            add_rule(self.multiworld.get_location(f"{girl} unique gift 3", self.player),lambda state: state.has_all((*girl_girlpair[girl][2], f"{girl} unique item 3"), self.player), "or")
+            add_rule(self.multiworld.get_location(f"{girl} unique gift 3", self.player),lambda state: state.has_all((*girl_girlpair[girl][3], f"{girl} unique item 3"), self.player), "or")
+
+            set_rule(self.multiworld.get_location(f"{girl} unique gift 4", self.player),lambda state: state.has_all((*girl_girlpair[girl][0], f"{girl} unique item 4"), self.player))
+            add_rule(self.multiworld.get_location(f"{girl} unique gift 4", self.player),lambda state: state.has_all((*girl_girlpair[girl][1], f"{girl} unique item 4"), self.player), "or")
+            add_rule(self.multiworld.get_location(f"{girl} unique gift 4", self.player),lambda state: state.has_all((*girl_girlpair[girl][2], f"{girl} unique item 4"), self.player), "or")
+            add_rule(self.multiworld.get_location(f"{girl} unique gift 4", self.player),lambda state: state.has_all((*girl_girlpair[girl][3], f"{girl} unique item 4"), self.player), "or")
+
+            set_rule(self.multiworld.get_location(f"{girl} shoe gift 1", self.player),lambda state: state.has_all((*girl_girlpair[girl][0], f"{girl} shoe item 1"), self.player))
+            add_rule(self.multiworld.get_location(f"{girl} shoe gift 1", self.player),lambda state: state.has_all((*girl_girlpair[girl][1], f"{girl} shoe item 1"), self.player), "or")
+            add_rule(self.multiworld.get_location(f"{girl} shoe gift 1", self.player),lambda state: state.has_all((*girl_girlpair[girl][2], f"{girl} shoe item 1"), self.player), "or")
+            add_rule(self.multiworld.get_location(f"{girl} shoe gift 1", self.player),lambda state: state.has_all((*girl_girlpair[girl][3], f"{girl} shoe item 1"), self.player), "or")
+
+            set_rule(self.multiworld.get_location(f"{girl} shoe gift 2", self.player),lambda state: state.has_all((*girl_girlpair[girl][0], f"{girl} shoe item 2"), self.player))
+            add_rule(self.multiworld.get_location(f"{girl} shoe gift 2", self.player),lambda state: state.has_all((*girl_girlpair[girl][1], f"{girl} shoe item 2"), self.player), "or")
+            add_rule(self.multiworld.get_location(f"{girl} shoe gift 2", self.player),lambda state: state.has_all((*girl_girlpair[girl][2], f"{girl} shoe item 2"), self.player), "or")
+            add_rule(self.multiworld.get_location(f"{girl} shoe gift 2", self.player),lambda state: state.has_all((*girl_girlpair[girl][3], f"{girl} shoe item 2"), self.player), "or")
+
+            set_rule(self.multiworld.get_location(f"{girl} shoe gift 3", self.player),lambda state: state.has_all((*girl_girlpair[girl][0], f"{girl} shoe item 3"), self.player))
+            add_rule(self.multiworld.get_location(f"{girl} shoe gift 3", self.player),lambda state: state.has_all((*girl_girlpair[girl][1], f"{girl} shoe item 3"), self.player), "or")
+            add_rule(self.multiworld.get_location(f"{girl} shoe gift 3", self.player),lambda state: state.has_all((*girl_girlpair[girl][2], f"{girl} shoe item 3"), self.player), "or")
+            add_rule(self.multiworld.get_location(f"{girl} shoe gift 3", self.player),lambda state: state.has_all((*girl_girlpair[girl][3], f"{girl} shoe item 3"), self.player), "or")
+
+            set_rule(self.multiworld.get_location(f"{girl} shoe gift 4", self.player),lambda state: state.has_all((*girl_girlpair[girl][0], f"{girl} shoe item 4"), self.player))
+            add_rule(self.multiworld.get_location(f"{girl} shoe gift 4", self.player),lambda state: state.has_all((*girl_girlpair[girl][1], f"{girl} shoe item 4"), self.player), "or")
+            add_rule(self.multiworld.get_location(f"{girl} shoe gift 4", self.player),lambda state: state.has_all((*girl_girlpair[girl][2], f"{girl} shoe item 4"), self.player), "or")
+            add_rule(self.multiworld.get_location(f"{girl} shoe gift 4", self.player),lambda state: state.has_all((*girl_girlpair[girl][3], f"{girl} shoe item 4"), self.player), "or")
+
+
             forbid_item(self.multiworld.get_location(f"{girl} unique gift 1", self.player), f"Unlock Girl({girl})", self.player)
             forbid_item(self.multiworld.get_location(f"{girl} unique gift 2", self.player), f"Unlock Girl({girl})", self.player)
             forbid_item(self.multiworld.get_location(f"{girl} unique gift 3", self.player), f"Unlock Girl({girl})", self.player)
@@ -469,6 +564,14 @@ class HuniePop2(World):
             forbid_item(self.multiworld.get_location(f"{girl} shoe gift 2", self.player), f"Unlock Girl({girl})", self.player)
             forbid_item(self.multiworld.get_location(f"{girl} shoe gift 3", self.player), f"Unlock Girl({girl})", self.player)
             forbid_item(self.multiworld.get_location(f"{girl} shoe gift 4", self.player), f"Unlock Girl({girl})", self.player)
+
+            if not self.options.disable_outfits.value:
+                forbid_item(self.multiworld.get_location(f"{girl} outfit 1", self.player),f"Unlock Girl({girl})", self.player)
+                forbid_item(self.multiworld.get_location(f"{girl} outfit 2", self.player),f"Unlock Girl({girl})", self.player)
+                forbid_item(self.multiworld.get_location(f"{girl} outfit 3", self.player),f"Unlock Girl({girl})", self.player)
+                forbid_item(self.multiworld.get_location(f"{girl} outfit 4", self.player),f"Unlock Girl({girl})", self.player)
+                forbid_item(self.multiworld.get_location(f"{girl} outfit 5", self.player),f"Unlock Girl({girl})", self.player)
+
             if self.options.enable_questions:
                 forbid_item(self.multiworld.get_location(f"{girl} favourite drink", self.player), f"Unlock Girl({girl})", self.player)
                 forbid_item(self.multiworld.get_location(f"{girl} favourite Ice Cream Flavor", self.player), f"Unlock Girl({girl})", self.player)
@@ -490,6 +593,7 @@ class HuniePop2(World):
                 forbid_item(self.multiworld.get_location(f"{girl} favourite Own Body Part", self.player), f"Unlock Girl({girl})", self.player)
                 forbid_item(self.multiworld.get_location(f"{girl} favourite Sex Position", self.player), f"Unlock Girl({girl})", self.player)
                 forbid_item(self.multiworld.get_location(f"{girl} favourite Porn Category", self.player), f"Unlock Girl({girl})", self.player)
+
             for pair in girl_pairs[girl]:
                 forbid_item(self.multiworld.get_location(f"{girl} unique gift 1", self.player), f"Pair Unlock {pair}", self.player)
                 forbid_item(self.multiworld.get_location(f"{girl} unique gift 2", self.player), f"Pair Unlock {pair}", self.player)
@@ -499,6 +603,14 @@ class HuniePop2(World):
                 forbid_item(self.multiworld.get_location(f"{girl} shoe gift 2", self.player), f"Pair Unlock {pair}", self.player)
                 forbid_item(self.multiworld.get_location(f"{girl} shoe gift 3", self.player), f"Pair Unlock {pair}", self.player)
                 forbid_item(self.multiworld.get_location(f"{girl} shoe gift 4", self.player), f"Pair Unlock {pair}", self.player)
+
+                if not self.options.disable_outfits.value:
+                    forbid_item(self.multiworld.get_location(f"{girl} outfit 1", self.player), f"Pair Unlock {pair}",self.player)
+                    forbid_item(self.multiworld.get_location(f"{girl} outfit 2", self.player), f"Pair Unlock {pair}",self.player)
+                    forbid_item(self.multiworld.get_location(f"{girl} outfit 3", self.player), f"Pair Unlock {pair}",self.player)
+                    forbid_item(self.multiworld.get_location(f"{girl} outfit 4", self.player), f"Pair Unlock {pair}",self.player)
+                    forbid_item(self.multiworld.get_location(f"{girl} outfit 5", self.player), f"Pair Unlock {pair}",self.player)
+
                 if self.options.enable_questions:
                     forbid_item(self.multiworld.get_location(f"{girl} favourite drink", self.player), f"Pair Unlock {pair}", self.player)
                     forbid_item(self.multiworld.get_location(f"{girl} favourite Ice Cream Flavor", self.player), f"Pair Unlock {pair}", self.player)
@@ -524,76 +636,93 @@ class HuniePop2(World):
 
             #set_rule(self.multiworld.get_entrance(f"hub-{girl}", self.player), lambda state: (state.has(f"Unlock Girl({girl})", self.player) and ((state.has(girl_girlpair[girl][0][0], self.player) and state.has(girl_girlpair[girl][0][1], self.player)) or(state.has(girl_girlpair[girl][1][0], self.player) and state.has(girl_girlpair[girl][1][1], self.player)) or(state.has(girl_girlpair[girl][2][0], self.player) and state.has(girl_girlpair[girl][2][1], self.player)) or(state.has(girl_girlpair[girl][3][0], self.player) and state.has(girl_girlpair[girl][3][1], self.player)))))
 
-            set_rule(self.multiworld.get_location(f"{girl} unique gift 1", self.player), lambda state: state.has(f"{girl} unique item 1", self.player))
-            set_rule(self.multiworld.get_location(f"{girl} unique gift 2", self.player), lambda state: state.has(f"{girl} unique item 2", self.player))
-            set_rule(self.multiworld.get_location(f"{girl} unique gift 3", self.player), lambda state: state.has(f"{girl} unique item 3", self.player))
-            set_rule(self.multiworld.get_location(f"{girl} unique gift 4", self.player), lambda state: state.has(f"{girl} unique item 4", self.player))
-            set_rule(self.multiworld.get_location(f"{girl} shoe gift 1", self.player), lambda state: state.has(f"{girl} shoe item 1", self.player))
-            set_rule(self.multiworld.get_location(f"{girl} shoe gift 2", self.player), lambda state: state.has(f"{girl} shoe item 2", self.player))
-            set_rule(self.multiworld.get_location(f"{girl} shoe gift 3", self.player), lambda state: state.has(f"{girl} shoe item 3", self.player))
-            set_rule(self.multiworld.get_location(f"{girl} shoe gift 4", self.player), lambda state: state.has(f"{girl} shoe item 4", self.player))
 
 
-        #set_rule(self.multiworld.get_entrance(f"hub-lola", self.player), lambda state: (
-        set_rule(self.multiworld.get_entrance(f"hub-lola", self.player), lambda state: (state.has_all(("Unlock Girl(lola)", "Unlock Girl(abia)", "Pair Unlock (abia/lola)"), self.player)))
-        add_rule(self.multiworld.get_entrance(f"hub-lola", self.player), lambda state: (state.has_all(("Unlock Girl(lola)", "Unlock Girl(nora)", "Pair Unlock (lola/nora)"), self.player)), "or")
-        add_rule(self.multiworld.get_entrance(f"hub-lola", self.player), lambda state: (state.has_all(("Unlock Girl(lola)", "Unlock Girl(jessie)", "Pair Unlock (jessie/lola)"), self.player)), "or")
-        add_rule(self.multiworld.get_entrance(f"hub-lola", self.player), lambda state: (state.has_all(("Unlock Girl(lola)", "Unlock Girl(zoey)", "Pair Unlock (lola/zoey)"), self.player)), "or")
-        #set_rule(self.multiworld.get_entrance(f"hub-jessie", self.player), lambda state: (
-        set_rule(self.multiworld.get_entrance(f"hub-jessie", self.player), lambda state: (state.has_all(("Unlock Girl(jessie)", "Unlock Girl(lailani)", "Pair Unlock (jessie/lailani)"), self.player)))
-        add_rule(self.multiworld.get_entrance(f"hub-jessie", self.player), lambda state: (state.has_all(("Unlock Girl(jessie)", "Unlock Girl(brooke)", "Pair Unlock (brooke/jessie)"), self.player)), "or")
-        add_rule(self.multiworld.get_entrance(f"hub-jessie", self.player), lambda state: (state.has_all(("Unlock Girl(jessie)", "Unlock Girl(lola)", "Pair Unlock (jessie/lola)"), self.player)), "or")
-        add_rule(self.multiworld.get_entrance(f"hub-jessie", self.player), lambda state: (state.has_all(("Unlock Girl(jessie)", "Unlock Girl(abia)", "Pair Unlock (abia/jessie)"), self.player)), "or")
-        #set_rule(self.multiworld.get_entrance(f"hub-lillian", self.player), lambda state: (
-        set_rule(self.multiworld.get_entrance(f"hub-lillian", self.player), lambda state: (state.has_all(("Unlock Girl(lillian)", "Unlock Girl(ashley)", "Pair Unlock (ashley/lillian)"), self.player)))
-        add_rule(self.multiworld.get_entrance(f"hub-lillian", self.player), lambda state: (state.has_all(("Unlock Girl(lillian)", "Unlock Girl(zoey)", "Pair Unlock (lillian/zoey)"), self.player)), "or")
-        add_rule(self.multiworld.get_entrance(f"hub-lillian", self.player), lambda state: (state.has_all(("Unlock Girl(lillian)", "Unlock Girl(lailani)", "Pair Unlock (lailani/lillian)"), self.player)), "or")
-        add_rule(self.multiworld.get_entrance(f"hub-lillian", self.player), lambda state: (state.has_all(("Unlock Girl(lillian)", "Unlock Girl(abia)", "Pair Unlock (abia/lillian)"), self.player)), "or")
-        #set_rule(self.multiworld.get_entrance(f"hub-zoey", self.player), lambda state: (
-        set_rule(self.multiworld.get_entrance(f"hub-zoey", self.player), lambda state: (state.has_all(("Unlock Girl(zoey)", "Unlock Girl(lillian)", "Pair Unlock (lillian/zoey)"), self.player)))
-        add_rule(self.multiworld.get_entrance(f"hub-zoey", self.player), lambda state: (state.has_all(("Unlock Girl(zoey)", "Unlock Girl(lola)", "Pair Unlock (lola/zoey)"), self.player)), "or")
-        add_rule(self.multiworld.get_entrance(f"hub-zoey", self.player), lambda state: (state.has_all(("Unlock Girl(zoey)", "Unlock Girl(sarah)", "Pair Unlock (sarah/zoey)"), self.player)), "or")
-        add_rule(self.multiworld.get_entrance(f"hub-zoey", self.player), lambda state: (state.has_all(("Unlock Girl(zoey)", "Unlock Girl(polly)", "Pair Unlock (polly/zoey)"), self.player)), "or")
-        #set_rule(self.multiworld.get_entrance(f"hub-sarah", self.player), lambda state: (
-        set_rule(self.multiworld.get_entrance(f"hub-sarah", self.player), lambda state: (state.has_all(("Unlock Girl(sarah)", "Unlock Girl(lailani)", "Pair Unlock (lailani/sarah)"), self.player)))
-        add_rule(self.multiworld.get_entrance(f"hub-sarah", self.player), lambda state: (state.has_all(("Unlock Girl(sarah)", "Unlock Girl(zoey)", "Pair Unlock (sarah/zoey)"), self.player)), "or")
-        add_rule(self.multiworld.get_entrance(f"hub-sarah", self.player), lambda state: (state.has_all(("Unlock Girl(sarah)", "Unlock Girl(nora)", "Pair Unlock (nora/sarah)"), self.player)), "or")
-        add_rule(self.multiworld.get_entrance(f"hub-sarah", self.player), lambda state: (state.has_all(("Unlock Girl(sarah)", "Unlock Girl(brooke)", "Pair Unlock (brooke/sarah)"), self.player)), "or")
-        #set_rule(self.multiworld.get_entrance(f"hub-lailani", self.player), lambda state: (
-        set_rule(self.multiworld.get_entrance(f"hub-lailani", self.player), lambda state: (state.has_all(("Unlock Girl(lailani)", "Unlock Girl(sarah)", "Pair Unlock (lailani/sarah)"), self.player)))
-        add_rule(self.multiworld.get_entrance(f"hub-lailani", self.player), lambda state: (state.has_all(("Unlock Girl(lailani)", "Unlock Girl(jessie)", "Pair Unlock (jessie/lailani)"), self.player)), "or")
-        add_rule(self.multiworld.get_entrance(f"hub-lailani", self.player), lambda state: (state.has_all(("Unlock Girl(lailani)", "Unlock Girl(lillian)", "Pair Unlock (lailani/lillian)"), self.player)), "or")
-        add_rule(self.multiworld.get_entrance(f"hub-lailani", self.player), lambda state: (state.has_all(("Unlock Girl(lailani)", "Unlock Girl(candace)", "Pair Unlock (candace/lailani)"), self.player)), "or")
-        #set_rule(self.multiworld.get_entrance(f"hub-candace", self.player), lambda state: (
-        set_rule(self.multiworld.get_entrance(f"hub-candace", self.player), lambda state: (state.has_all(("Unlock Girl(candace)", "Unlock Girl(nora)", "Pair Unlock (candace/nora)"), self.player)))
-        add_rule(self.multiworld.get_entrance(f"hub-candace", self.player), lambda state: (state.has_all(("Unlock Girl(candace)", "Unlock Girl(lailani)", "Pair Unlock (candace/lailani)"), self.player)), "or")
-        add_rule(self.multiworld.get_entrance(f"hub-candace", self.player), lambda state: (state.has_all(("Unlock Girl(candace)", "Unlock Girl(abia)", "Pair Unlock (abia/candace)"), self.player)), "or")
-        add_rule(self.multiworld.get_entrance(f"hub-candace", self.player), lambda state: (state.has_all(("Unlock Girl(candace)", "Unlock Girl(polly)", "Pair Unlock (candace/polly)"), self.player)), "or")
-        #set_rule(self.multiworld.get_entrance(f"hub-nora", self.player), lambda state: (
-        set_rule(self.multiworld.get_entrance(f"hub-nora", self.player), lambda state: (state.has_all(("Unlock Girl(nora)", "Unlock Girl(lola)", "Pair Unlock (lola/nora)"), self.player)))
-        add_rule(self.multiworld.get_entrance(f"hub-nora", self.player), lambda state: (state.has_all(("Unlock Girl(nora)", "Unlock Girl(candace)", "Pair Unlock (candace/nora)"), self.player)), "or")
-        add_rule(self.multiworld.get_entrance(f"hub-nora", self.player), lambda state: (state.has_all(("Unlock Girl(nora)", "Unlock Girl(sarah)", "Pair Unlock (nora/sarah)"), self.player)), "or")
-        add_rule(self.multiworld.get_entrance(f"hub-nora", self.player), lambda state: (state.has_all(("Unlock Girl(nora)", "Unlock Girl(ashley)", "Pair Unlock (ashley/nora)"), self.player)), "or")
-        #set_rule(self.multiworld.get_entrance(f"hub-brooke", self.player), lambda state: (
-        set_rule(self.multiworld.get_entrance(f"hub-brooke", self.player), lambda state: (state.has_all(("Unlock Girl(brooke)", "Unlock Girl(jessie)", "Pair Unlock (brooke/jessie)"), self.player)))
-        add_rule(self.multiworld.get_entrance(f"hub-brooke", self.player), lambda state: (state.has_all(("Unlock Girl(brooke)", "Unlock Girl(sarah)", "Pair Unlock (brooke/sarah)"), self.player)), "or")
-        add_rule(self.multiworld.get_entrance(f"hub-brooke", self.player), lambda state: (state.has_all(("Unlock Girl(brooke)", "Unlock Girl(ashley)", "Pair Unlock (ashley/brooke)"), self.player)), "or")
-        add_rule(self.multiworld.get_entrance(f"hub-brooke", self.player), lambda state: (state.has_all(("Unlock Girl(brooke)", "Unlock Girl(polly)", "Pair Unlock (brooke/polly)"), self.player)), "or")
-        #set_rule(self.multiworld.get_entrance(f"hub-ashley", self.player), lambda state: (
-        set_rule(self.multiworld.get_entrance(f"hub-ashley", self.player), lambda state: (state.has_all(("Unlock Girl(ashley)", "Unlock Girl(polly)", "Pair Unlock (ashley/polly)"), self.player)))
-        add_rule(self.multiworld.get_entrance(f"hub-ashley", self.player), lambda state: (state.has_all(("Unlock Girl(ashley)", "Unlock Girl(lillian)", "Pair Unlock (ashley/lillian)"), self.player)), "or")
-        add_rule(self.multiworld.get_entrance(f"hub-ashley", self.player), lambda state: (state.has_all(("Unlock Girl(ashley)", "Unlock Girl(nora)", "Pair Unlock (ashley/nora)"), self.player)), "or")
-        add_rule(self.multiworld.get_entrance(f"hub-ashley", self.player), lambda state: (state.has_all(("Unlock Girl(ashley)", "Unlock Girl(brooke)", "Pair Unlock (ashley/brooke)"), self.player)), "or")
-        #set_rule(self.multiworld.get_entrance(f"hub-abia", self.player), lambda state: (
-        set_rule(self.multiworld.get_entrance(f"hub-abia", self.player), lambda state: (state.has_all(("Unlock Girl(abia)", "Unlock Girl(lola)", "Pair Unlock (abia/lola)"), self.player)))
-        add_rule(self.multiworld.get_entrance(f"hub-abia", self.player), lambda state: (state.has_all(("Unlock Girl(abia)", "Unlock Girl(jessie)", "Pair Unlock (abia/jessie)"), self.player)), "or")
-        add_rule(self.multiworld.get_entrance(f"hub-abia", self.player), lambda state: (state.has_all(("Unlock Girl(abia)", "Unlock Girl(lillian)", "Pair Unlock (abia/lillian)"), self.player)), "or")
-        add_rule(self.multiworld.get_entrance(f"hub-abia", self.player), lambda state: (state.has_all(("Unlock Girl(abia)", "Unlock Girl(candace)", "Pair Unlock (abia/candace)"), self.player)), "or")
-        #set_rule(self.multiworld.get_entrance(f"hub-polly", self.player), lambda state: (
-        set_rule(self.multiworld.get_entrance(f"hub-polly", self.player), lambda state: (state.has_all(("Unlock Girl(polly)", "Unlock Girl(ashley)", "Pair Unlock (ashley/polly)"), self.player)))
-        add_rule(self.multiworld.get_entrance(f"hub-polly", self.player), lambda state: (state.has_all(("Unlock Girl(polly)", "Unlock Girl(zoey)", "Pair Unlock (polly/zoey)"), self.player)), "or")
-        add_rule(self.multiworld.get_entrance(f"hub-polly", self.player), lambda state: (state.has_all(("Unlock Girl(polly)", "Unlock Girl(candace)", "Pair Unlock (candace/polly)"), self.player)), "or")
-        add_rule(self.multiworld.get_entrance(f"hub-polly", self.player), lambda state: (state.has_all(("Unlock Girl(polly)", "Unlock Girl(brooke)", "Pair Unlock (brooke/polly)"), self.player)), "or")
+        ##set_rule(self.multiworld.get_entrance(f"hub-lola", self.player), lambda state: (
+        #set_rule(self.multiworld.get_entrance(f"hub-lola", self.player), lambda state: (state.has_all(("Unlock Girl(lola)", "Unlock Girl(abia)", "Pair Unlock (abia/lola)"), self.player)))
+        #add_rule(self.multiworld.get_entrance(f"hub-lola", self.player), lambda state: (state.has_all(("Unlock Girl(lola)", "Unlock Girl(nora)", "Pair Unlock (lola/nora)"), self.player)), "or")
+        #add_rule(self.multiworld.get_entrance(f"hub-lola", self.player), lambda state: (state.has_all(("Unlock Girl(lola)", "Unlock Girl(jessie)", "Pair Unlock (jessie/lola)"), self.player)), "or")
+        #add_rule(self.multiworld.get_entrance(f"hub-lola", self.player), lambda state: (state.has_all(("Unlock Girl(lola)", "Unlock Girl(zoey)", "Pair Unlock (lola/zoey)"), self.player)), "or")
+        ##set_rule(self.multiworld.get_entrance(f"hub-jessie", self.player), lambda state: (
+        #set_rule(self.multiworld.get_entrance(f"hub-jessie", self.player), lambda state: (state.has_all(("Unlock Girl(jessie)", "Unlock Girl(lailani)", "Pair Unlock (jessie/lailani)"), self.player)))
+        #add_rule(self.multiworld.get_entrance(f"hub-jessie", self.player), lambda state: (state.has_all(("Unlock Girl(jessie)", "Unlock Girl(brooke)", "Pair Unlock (brooke/jessie)"), self.player)), "or")
+        #add_rule(self.multiworld.get_entrance(f"hub-jessie", self.player), lambda state: (state.has_all(("Unlock Girl(jessie)", "Unlock Girl(lola)", "Pair Unlock (jessie/lola)"), self.player)), "or")
+        #add_rule(self.multiworld.get_entrance(f"hub-jessie", self.player), lambda state: (state.has_all(("Unlock Girl(jessie)", "Unlock Girl(abia)", "Pair Unlock (abia/jessie)"), self.player)), "or")
+        ##set_rule(self.multiworld.get_entrance(f"hub-lillian", self.player), lambda state: (
+        #set_rule(self.multiworld.get_entrance(f"hub-lillian", self.player), lambda state: (state.has_all(("Unlock Girl(lillian)", "Unlock Girl(ashley)", "Pair Unlock (ashley/lillian)"), self.player)))
+        #add_rule(self.multiworld.get_entrance(f"hub-lillian", self.player), lambda state: (state.has_all(("Unlock Girl(lillian)", "Unlock Girl(zoey)", "Pair Unlock (lillian/zoey)"), self.player)), "or")
+        #add_rule(self.multiworld.get_entrance(f"hub-lillian", self.player), lambda state: (state.has_all(("Unlock Girl(lillian)", "Unlock Girl(lailani)", "Pair Unlock (lailani/lillian)"), self.player)), "or")
+        #add_rule(self.multiworld.get_entrance(f"hub-lillian", self.player), lambda state: (state.has_all(("Unlock Girl(lillian)", "Unlock Girl(abia)", "Pair Unlock (abia/lillian)"), self.player)), "or")
+        ##set_rule(self.multiworld.get_entrance(f"hub-zoey", self.player), lambda state: (
+        #set_rule(self.multiworld.get_entrance(f"hub-zoey", self.player), lambda state: (state.has_all(("Unlock Girl(zoey)", "Unlock Girl(lillian)", "Pair Unlock (lillian/zoey)"), self.player)))
+        #add_rule(self.multiworld.get_entrance(f"hub-zoey", self.player), lambda state: (state.has_all(("Unlock Girl(zoey)", "Unlock Girl(lola)", "Pair Unlock (lola/zoey)"), self.player)), "or")
+        #add_rule(self.multiworld.get_entrance(f"hub-zoey", self.player), lambda state: (state.has_all(("Unlock Girl(zoey)", "Unlock Girl(sarah)", "Pair Unlock (sarah/zoey)"), self.player)), "or")
+        #add_rule(self.multiworld.get_entrance(f"hub-zoey", self.player), lambda state: (state.has_all(("Unlock Girl(zoey)", "Unlock Girl(polly)", "Pair Unlock (polly/zoey)"), self.player)), "or")
+        ##set_rule(self.multiworld.get_entrance(f"hub-sarah", self.player), lambda state: (
+        #set_rule(self.multiworld.get_entrance(f"hub-sarah", self.player), lambda state: (state.has_all(("Unlock Girl(sarah)", "Unlock Girl(lailani)", "Pair Unlock (lailani/sarah)"), self.player)))
+        #add_rule(self.multiworld.get_entrance(f"hub-sarah", self.player), lambda state: (state.has_all(("Unlock Girl(sarah)", "Unlock Girl(zoey)", "Pair Unlock (sarah/zoey)"), self.player)), "or")
+        #add_rule(self.multiworld.get_entrance(f"hub-sarah", self.player), lambda state: (state.has_all(("Unlock Girl(sarah)", "Unlock Girl(nora)", "Pair Unlock (nora/sarah)"), self.player)), "or")
+        #add_rule(self.multiworld.get_entrance(f"hub-sarah", self.player), lambda state: (state.has_all(("Unlock Girl(sarah)", "Unlock Girl(brooke)", "Pair Unlock (brooke/sarah)"), self.player)), "or")
+        ##set_rule(self.multiworld.get_entrance(f"hub-lailani", self.player), lambda state: (
+        #set_rule(self.multiworld.get_entrance(f"hub-lailani", self.player), lambda state: (state.has_all(("Unlock Girl(lailani)", "Unlock Girl(sarah)", "Pair Unlock (lailani/sarah)"), self.player)))
+        #add_rule(self.multiworld.get_entrance(f"hub-lailani", self.player), lambda state: (state.has_all(("Unlock Girl(lailani)", "Unlock Girl(jessie)", "Pair Unlock (jessie/lailani)"), self.player)), "or")
+        #add_rule(self.multiworld.get_entrance(f"hub-lailani", self.player), lambda state: (state.has_all(("Unlock Girl(lailani)", "Unlock Girl(lillian)", "Pair Unlock (lailani/lillian)"), self.player)), "or")
+        #add_rule(self.multiworld.get_entrance(f"hub-lailani", self.player), lambda state: (state.has_all(("Unlock Girl(lailani)", "Unlock Girl(candace)", "Pair Unlock (candace/lailani)"), self.player)), "or")
+        ##set_rule(self.multiworld.get_entrance(f"hub-candace", self.player), lambda state: (
+        #set_rule(self.multiworld.get_entrance(f"hub-candace", self.player), lambda state: (state.has_all(("Unlock Girl(candace)", "Unlock Girl(nora)", "Pair Unlock (candace/nora)"), self.player)))
+        #add_rule(self.multiworld.get_entrance(f"hub-candace", self.player), lambda state: (state.has_all(("Unlock Girl(candace)", "Unlock Girl(lailani)", "Pair Unlock (candace/lailani)"), self.player)), "or")
+        #add_rule(self.multiworld.get_entrance(f"hub-candace", self.player), lambda state: (state.has_all(("Unlock Girl(candace)", "Unlock Girl(abia)", "Pair Unlock (abia/candace)"), self.player)), "or")
+        #add_rule(self.multiworld.get_entrance(f"hub-candace", self.player), lambda state: (state.has_all(("Unlock Girl(candace)", "Unlock Girl(polly)", "Pair Unlock (candace/polly)"), self.player)), "or")
+        ##set_rule(self.multiworld.get_entrance(f"hub-nora", self.player), lambda state: (
+        #set_rule(self.multiworld.get_entrance(f"hub-nora", self.player), lambda state: (state.has_all(("Unlock Girl(nora)", "Unlock Girl(lola)", "Pair Unlock (lola/nora)"), self.player)))
+        #add_rule(self.multiworld.get_entrance(f"hub-nora", self.player), lambda state: (state.has_all(("Unlock Girl(nora)", "Unlock Girl(candace)", "Pair Unlock (candace/nora)"), self.player)), "or")
+        #add_rule(self.multiworld.get_entrance(f"hub-nora", self.player), lambda state: (state.has_all(("Unlock Girl(nora)", "Unlock Girl(sarah)", "Pair Unlock (nora/sarah)"), self.player)), "or")
+        #add_rule(self.multiworld.get_entrance(f"hub-nora", self.player), lambda state: (state.has_all(("Unlock Girl(nora)", "Unlock Girl(ashley)", "Pair Unlock (ashley/nora)"), self.player)), "or")
+        ##set_rule(self.multiworld.get_entrance(f"hub-brooke", self.player), lambda state: (
+        #set_rule(self.multiworld.get_entrance(f"hub-brooke", self.player), lambda state: (state.has_all(("Unlock Girl(brooke)", "Unlock Girl(jessie)", "Pair Unlock (brooke/jessie)"), self.player)))
+        #add_rule(self.multiworld.get_entrance(f"hub-brooke", self.player), lambda state: (state.has_all(("Unlock Girl(brooke)", "Unlock Girl(sarah)", "Pair Unlock (brooke/sarah)"), self.player)), "or")
+        #add_rule(self.multiworld.get_entrance(f"hub-brooke", self.player), lambda state: (state.has_all(("Unlock Girl(brooke)", "Unlock Girl(ashley)", "Pair Unlock (ashley/brooke)"), self.player)), "or")
+        #add_rule(self.multiworld.get_entrance(f"hub-brooke", self.player), lambda state: (state.has_all(("Unlock Girl(brooke)", "Unlock Girl(polly)", "Pair Unlock (brooke/polly)"), self.player)), "or")
+        ##set_rule(self.multiworld.get_entrance(f"hub-ashley", self.player), lambda state: (
+        #set_rule(self.multiworld.get_entrance(f"hub-ashley", self.player), lambda state: (state.has_all(("Unlock Girl(ashley)", "Unlock Girl(polly)", "Pair Unlock (ashley/polly)"), self.player)))
+        #add_rule(self.multiworld.get_entrance(f"hub-ashley", self.player), lambda state: (state.has_all(("Unlock Girl(ashley)", "Unlock Girl(lillian)", "Pair Unlock (ashley/lillian)"), self.player)), "or")
+        #add_rule(self.multiworld.get_entrance(f"hub-ashley", self.player), lambda state: (state.has_all(("Unlock Girl(ashley)", "Unlock Girl(nora)", "Pair Unlock (ashley/nora)"), self.player)), "or")
+        #add_rule(self.multiworld.get_entrance(f"hub-ashley", self.player), lambda state: (state.has_all(("Unlock Girl(ashley)", "Unlock Girl(brooke)", "Pair Unlock (ashley/brooke)"), self.player)), "or")
+        ##set_rule(self.multiworld.get_entrance(f"hub-abia", self.player), lambda state: (
+        #set_rule(self.multiworld.get_entrance(f"hub-abia", self.player), lambda state: (state.has_all(("Unlock Girl(abia)", "Unlock Girl(lola)", "Pair Unlock (abia/lola)"), self.player)))
+        #add_rule(self.multiworld.get_entrance(f"hub-abia", self.player), lambda state: (state.has_all(("Unlock Girl(abia)", "Unlock Girl(jessie)", "Pair Unlock (abia/jessie)"), self.player)), "or")
+        #add_rule(self.multiworld.get_entrance(f"hub-abia", self.player), lambda state: (state.has_all(("Unlock Girl(abia)", "Unlock Girl(lillian)", "Pair Unlock (abia/lillian)"), self.player)), "or")
+        #add_rule(self.multiworld.get_entrance(f"hub-abia", self.player), lambda state: (state.has_all(("Unlock Girl(abia)", "Unlock Girl(candace)", "Pair Unlock (abia/candace)"), self.player)), "or")
+        ##set_rule(self.multiworld.get_entrance(f"hub-polly", self.player), lambda state: (
+        #set_rule(self.multiworld.get_entrance(f"hub-polly", self.player), lambda state: (state.has_all(("Unlock Girl(polly)", "Unlock Girl(ashley)", "Pair Unlock (ashley/polly)"), self.player)))
+        #add_rule(self.multiworld.get_entrance(f"hub-polly", self.player), lambda state: (state.has_all(("Unlock Girl(polly)", "Unlock Girl(zoey)", "Pair Unlock (polly/zoey)"), self.player)), "or")
+        #add_rule(self.multiworld.get_entrance(f"hub-polly", self.player), lambda state: (state.has_all(("Unlock Girl(polly)", "Unlock Girl(candace)", "Pair Unlock (candace/polly)"), self.player)), "or")
+        #add_rule(self.multiworld.get_entrance(f"hub-polly", self.player), lambda state: (state.has_all(("Unlock Girl(polly)", "Unlock Girl(brooke)", "Pair Unlock (brooke/polly)"), self.player)), "or")
+
+        set_rule(self.multiworld.get_entrance("hub-pair(abia/lola)", self.player), lambda state: (state.has_all(("Unlock Girl(lola)", "Unlock Girl(abia)", "Pair Unlock (abia/lola)"), self.player)))#"",
+        set_rule(self.multiworld.get_entrance("hub-pair(lola/nora)", self.player), lambda state: (state.has_all(("Unlock Girl(nora)", "Unlock Girl(lola)", "Pair Unlock (lola/nora)"), self.player)))#"",
+        set_rule(self.multiworld.get_entrance("hub-pair(candace/nora)", self.player), lambda state: (state.has_all(("Unlock Girl(candace)", "Unlock Girl(nora)", "Pair Unlock (candace/nora)"), self.player)))#"",
+        set_rule(self.multiworld.get_entrance("hub-pair(ashley/polly)", self.player), lambda state: (state.has_all(("Unlock Girl(polly)", "Unlock Girl(ashley)", "Pair Unlock (ashley/polly)"), self.player)))#"",
+        set_rule(self.multiworld.get_entrance("hub-pair(ashley/lillian)", self.player), lambda state: (state.has_all(("Unlock Girl(ashley)", "Unlock Girl(lillian)", "Pair Unlock (ashley/lillian)"), self.player)))#"",
+        set_rule(self.multiworld.get_entrance("hub-pair(lillian/zoey)", self.player), lambda state: (state.has_all(("Unlock Girl(lillian)", "Unlock Girl(zoey)", "Pair Unlock (lillian/zoey)"), self.player)))#"",
+        set_rule(self.multiworld.get_entrance("hub-pair(lailani/sarah)", self.player), lambda state: (state.has_all(("Unlock Girl(lailani)", "Unlock Girl(sarah)", "Pair Unlock (lailani/sarah)"), self.player)))#"",
+        set_rule(self.multiworld.get_entrance("hub-pair(jessie/lailani)", self.player), lambda state: (state.has_all(("Unlock Girl(lailani)", "Unlock Girl(jessie)", "Pair Unlock (jessie/lailani)"), self.player)))#"",
+        set_rule(self.multiworld.get_entrance("hub-pair(brooke/jessie)", self.player), lambda state: (state.has_all(("Unlock Girl(brooke)", "Unlock Girl(jessie)", "Pair Unlock (brooke/jessie)"), self.player)))#"",
+        set_rule(self.multiworld.get_entrance("hub-pair(jessie/lola)", self.player), lambda state: (state.has_all(("Unlock Girl(jessie)", "Unlock Girl(lola)", "Pair Unlock (jessie/lola)"), self.player)))#"",
+        set_rule(self.multiworld.get_entrance("hub-pair(lola/zoey)", self.player), lambda state: (state.has_all(("Unlock Girl(zoey)", "Unlock Girl(lola)", "Pair Unlock (lola/zoey)"), self.player)))#"",
+        set_rule(self.multiworld.get_entrance("hub-pair(abia/jessie)", self.player), lambda state: (state.has_all(("Unlock Girl(abia)", "Unlock Girl(jessie)", "Pair Unlock (abia/jessie)"), self.player)))#"",
+        set_rule(self.multiworld.get_entrance("hub-pair(lailani/lillian)", self.player), lambda state: (state.has_all(("Unlock Girl(lailani)", "Unlock Girl(lillian)", "Pair Unlock (lailani/lillian)"), self.player)))#"",
+        set_rule(self.multiworld.get_entrance("hub-pair(abia/lillian)", self.player), lambda state: (state.has_all(("Unlock Girl(lillian)", "Unlock Girl(abia)", "Pair Unlock (abia/lillian)"), self.player)))#"",
+        set_rule(self.multiworld.get_entrance("hub-pair(sarah/zoey)", self.player), lambda state: (state.has_all(("Unlock Girl(sarah)", "Unlock Girl(zoey)", "Pair Unlock (sarah/zoey)"), self.player)))#"",
+        set_rule(self.multiworld.get_entrance("hub-pair(polly/zoey)", self.player), lambda state: (state.has_all(("Unlock Girl(polly)", "Unlock Girl(zoey)", "Pair Unlock (polly/zoey)"), self.player)))#"",
+        set_rule(self.multiworld.get_entrance("hub-pair(nora/sarah)", self.player), lambda state: (state.has_all(("Unlock Girl(nora)", "Unlock Girl(sarah)", "Pair Unlock (nora/sarah)"), self.player)))#"",
+        set_rule(self.multiworld.get_entrance("hub-pair(brooke/sarah)", self.player), lambda state: (state.has_all(("Unlock Girl(brooke)", "Unlock Girl(sarah)", "Pair Unlock (brooke/sarah)"), self.player)))#"",
+        set_rule(self.multiworld.get_entrance("hub-pair(candace/lailani)", self.player), lambda state: (state.has_all(("Unlock Girl(candace)", "Unlock Girl(lailani)", "Pair Unlock (candace/lailani)"), self.player)))#"",
+        set_rule(self.multiworld.get_entrance("hub-pair(abia/candace)", self.player), lambda state: (state.has_all(("Unlock Girl(abia)", "Unlock Girl(candace)", "Pair Unlock (abia/candace)"), self.player)))#"",
+        set_rule(self.multiworld.get_entrance("hub-pair(candace/polly)", self.player), lambda state: (state.has_all(("Unlock Girl(candace)", "Unlock Girl(polly)", "Pair Unlock (candace/polly)"), self.player)))#"",
+        set_rule(self.multiworld.get_entrance("hub-pair(ashley/nora)", self.player), lambda state: (state.has_all(("Unlock Girl(ashley)", "Unlock Girl(nora)", "Pair Unlock (ashley/nora)"), self.player)))#"",
+        set_rule(self.multiworld.get_entrance("hub-pair(ashley/brooke)", self.player), lambda state: (state.has_all(("Unlock Girl(ashley)", "Unlock Girl(brooke)", "Pair Unlock (ashley/brooke)"), self.player)))#"",
+        set_rule(self.multiworld.get_entrance("hub-pair(brooke/polly)", self.player), lambda state: (state.has_all(("Unlock Girl(polly)", "Unlock Girl(brooke)", "Pair Unlock (brooke/polly)"), self.player)))#""
 
 
         if self.options.lovers_instead_wings.value:

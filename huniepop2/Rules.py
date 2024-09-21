@@ -74,7 +74,7 @@ polly4 = ("Unlock Girl(polly)", "Unlock Girl(brooke)", "Pair Unlock (brooke/poll
 polly0 = ("Unlock Girl(polly)", "Unlock Girl(ashley)", "Pair Unlock (ashley/polly)", "Unlock Girl(zoey)", "Pair Unlock (polly/zoey)", "Unlock Girl(candace)", "Pair Unlock (candace/polly)", "Unlock Girl(brooke)", "Pair Unlock (brooke/polly)")
 
 
-def set_rules(multiworld, player, girls, pairs, startpairs):
+def set_rules(multiworld, player, girls, pairs, startpairs, questions, outfits):
 
     print(startpairs)
 
@@ -101,36 +101,38 @@ def set_rules(multiworld, player, girls, pairs, startpairs):
             forbid_item(multiworld.get_location("lola shoe gift 2", player), lock, player)
             forbid_item(multiworld.get_location("lola shoe gift 3", player), lock, player)
             forbid_item(multiworld.get_location("lola shoe gift 4", player), lock, player)
-            forbid_item(multiworld.get_location("lola favourite drink", player), lock, player)
-            forbid_item(multiworld.get_location("lola favourite Ice Cream Flavor", player), lock, player)
-            forbid_item(multiworld.get_location("lola favourite Music Genre", player), lock, player)
-            forbid_item(multiworld.get_location("lola favourite Movie Genre", player), lock, player)
-            forbid_item(multiworld.get_location("lola favourite Online Activity", player), lock, player)
-            forbid_item(multiworld.get_location("lola favourite Phone App", player), lock, player)
-            forbid_item(multiworld.get_location("lola favourite Type Of Exercise", player), lock, player)
-            forbid_item(multiworld.get_location("lola favourite Outdoor Activity", player), lock, player)
-            forbid_item(multiworld.get_location("lola favourite Theme Park Ride", player), lock, player)
-            forbid_item(multiworld.get_location("lola favourite Friday Night", player), lock, player)
-            forbid_item(multiworld.get_location("lola favourite Sunday Morning", player), lock, player)
-            forbid_item(multiworld.get_location("lola favourite Weather", player), lock, player)
-            forbid_item(multiworld.get_location("lola favourite Holiday", player), lock, player)
-            forbid_item(multiworld.get_location("lola favourite Pet", player), lock, player)
-            forbid_item(multiworld.get_location("lola favourite School Subject", player), lock, player)
-            forbid_item(multiworld.get_location("lola favourite Place to shop", player), lock, player)
-            forbid_item(multiworld.get_location("lola favourite Trait In Partner", player), lock, player)
-            forbid_item(multiworld.get_location("lola favourite Own Body Part", player), lock, player)
-            forbid_item(multiworld.get_location("lola favourite Sex Position", player), lock, player)
-            forbid_item(multiworld.get_location("lola favourite Porn Category", player), lock, player)
-            forbid_item(multiworld.get_location("lola outfit 1", player), lock, player)
-            forbid_item(multiworld.get_location("lola outfit 2", player), lock, player)
-            forbid_item(multiworld.get_location("lola outfit 3", player), lock, player)
-            forbid_item(multiworld.get_location("lola outfit 4", player), lock, player)
-            forbid_item(multiworld.get_location("lola outfit 5", player), lock, player)
-            forbid_item(multiworld.get_location("lola outfit 6", player), lock, player)
-            forbid_item(multiworld.get_location("lola outfit 7", player), lock, player)
-            forbid_item(multiworld.get_location("lola outfit 8", player), lock, player)
-            forbid_item(multiworld.get_location("lola outfit 9", player), lock, player)
-            forbid_item(multiworld.get_location("lola outfit 10", player), lock, player)
+            if questions:
+                forbid_item(multiworld.get_location("lola favourite drink", player), lock, player)
+                forbid_item(multiworld.get_location("lola favourite Ice Cream Flavor", player), lock, player)
+                forbid_item(multiworld.get_location("lola favourite Music Genre", player), lock, player)
+                forbid_item(multiworld.get_location("lola favourite Movie Genre", player), lock, player)
+                forbid_item(multiworld.get_location("lola favourite Online Activity", player), lock, player)
+                forbid_item(multiworld.get_location("lola favourite Phone App", player), lock, player)
+                forbid_item(multiworld.get_location("lola favourite Type Of Exercise", player), lock, player)
+                forbid_item(multiworld.get_location("lola favourite Outdoor Activity", player), lock, player)
+                forbid_item(multiworld.get_location("lola favourite Theme Park Ride", player), lock, player)
+                forbid_item(multiworld.get_location("lola favourite Friday Night", player), lock, player)
+                forbid_item(multiworld.get_location("lola favourite Sunday Morning", player), lock, player)
+                forbid_item(multiworld.get_location("lola favourite Weather", player), lock, player)
+                forbid_item(multiworld.get_location("lola favourite Holiday", player), lock, player)
+                forbid_item(multiworld.get_location("lola favourite Pet", player), lock, player)
+                forbid_item(multiworld.get_location("lola favourite School Subject", player), lock, player)
+                forbid_item(multiworld.get_location("lola favourite Place to shop", player), lock, player)
+                forbid_item(multiworld.get_location("lola favourite Trait In Partner", player), lock, player)
+                forbid_item(multiworld.get_location("lola favourite Own Body Part", player), lock, player)
+                forbid_item(multiworld.get_location("lola favourite Sex Position", player), lock, player)
+                forbid_item(multiworld.get_location("lola favourite Porn Category", player), lock, player)
+            if not outfits:
+                forbid_item(multiworld.get_location("lola outfit 1", player), lock, player)
+                forbid_item(multiworld.get_location("lola outfit 2", player), lock, player)
+                forbid_item(multiworld.get_location("lola outfit 3", player), lock, player)
+                forbid_item(multiworld.get_location("lola outfit 4", player), lock, player)
+                forbid_item(multiworld.get_location("lola outfit 5", player), lock, player)
+                forbid_item(multiworld.get_location("lola outfit 6", player), lock, player)
+                forbid_item(multiworld.get_location("lola outfit 7", player), lock, player)
+                forbid_item(multiworld.get_location("lola outfit 8", player), lock, player)
+                forbid_item(multiworld.get_location("lola outfit 9", player), lock, player)
+                forbid_item(multiworld.get_location("lola outfit 10", player), lock, player)
 
     #JESSIE
     if "jessie" in girls:
@@ -155,36 +157,38 @@ def set_rules(multiworld, player, girls, pairs, startpairs):
             forbid_item(multiworld.get_location("jessie shoe gift 2", player), lock, player)
             forbid_item(multiworld.get_location("jessie shoe gift 3", player), lock, player)
             forbid_item(multiworld.get_location("jessie shoe gift 4", player), lock, player)
-            forbid_item(multiworld.get_location("jessie favourite drink", player), lock, player)
-            forbid_item(multiworld.get_location("jessie favourite Ice Cream Flavor", player), lock, player)
-            forbid_item(multiworld.get_location("jessie favourite Music Genre", player), lock, player)
-            forbid_item(multiworld.get_location("jessie favourite Movie Genre", player), lock, player)
-            forbid_item(multiworld.get_location("jessie favourite Online Activity", player), lock, player)
-            forbid_item(multiworld.get_location("jessie favourite Phone App", player), lock, player)
-            forbid_item(multiworld.get_location("jessie favourite Type Of Exercise", player), lock, player)
-            forbid_item(multiworld.get_location("jessie favourite Outdoor Activity", player), lock, player)
-            forbid_item(multiworld.get_location("jessie favourite Theme Park Ride", player), lock, player)
-            forbid_item(multiworld.get_location("jessie favourite Friday Night", player), lock, player)
-            forbid_item(multiworld.get_location("jessie favourite Sunday Morning", player), lock, player)
-            forbid_item(multiworld.get_location("jessie favourite Weather", player), lock, player)
-            forbid_item(multiworld.get_location("jessie favourite Holiday", player), lock, player)
-            forbid_item(multiworld.get_location("jessie favourite Pet", player), lock, player)
-            forbid_item(multiworld.get_location("jessie favourite School Subject", player), lock, player)
-            forbid_item(multiworld.get_location("jessie favourite Place to shop", player), lock, player)
-            forbid_item(multiworld.get_location("jessie favourite Trait In Partner", player), lock, player)
-            forbid_item(multiworld.get_location("jessie favourite Own Body Part", player), lock, player)
-            forbid_item(multiworld.get_location("jessie favourite Sex Position", player), lock, player)
-            forbid_item(multiworld.get_location("jessie favourite Porn Category", player), lock, player)
-            forbid_item(multiworld.get_location("jessie outfit 1", player), lock, player)
-            forbid_item(multiworld.get_location("jessie outfit 2", player), lock, player)
-            forbid_item(multiworld.get_location("jessie outfit 3", player), lock, player)
-            forbid_item(multiworld.get_location("jessie outfit 4", player), lock, player)
-            forbid_item(multiworld.get_location("jessie outfit 5", player), lock, player)
-            forbid_item(multiworld.get_location("jessie outfit 6", player), lock, player)
-            forbid_item(multiworld.get_location("jessie outfit 7", player), lock, player)
-            forbid_item(multiworld.get_location("jessie outfit 8", player), lock, player)
-            forbid_item(multiworld.get_location("jessie outfit 9", player), lock, player)
-            forbid_item(multiworld.get_location("jessie outfit 10", player), lock, player)
+            if questions:
+                forbid_item(multiworld.get_location("jessie favourite drink", player), lock, player)
+                forbid_item(multiworld.get_location("jessie favourite Ice Cream Flavor", player), lock, player)
+                forbid_item(multiworld.get_location("jessie favourite Music Genre", player), lock, player)
+                forbid_item(multiworld.get_location("jessie favourite Movie Genre", player), lock, player)
+                forbid_item(multiworld.get_location("jessie favourite Online Activity", player), lock, player)
+                forbid_item(multiworld.get_location("jessie favourite Phone App", player), lock, player)
+                forbid_item(multiworld.get_location("jessie favourite Type Of Exercise", player), lock, player)
+                forbid_item(multiworld.get_location("jessie favourite Outdoor Activity", player), lock, player)
+                forbid_item(multiworld.get_location("jessie favourite Theme Park Ride", player), lock, player)
+                forbid_item(multiworld.get_location("jessie favourite Friday Night", player), lock, player)
+                forbid_item(multiworld.get_location("jessie favourite Sunday Morning", player), lock, player)
+                forbid_item(multiworld.get_location("jessie favourite Weather", player), lock, player)
+                forbid_item(multiworld.get_location("jessie favourite Holiday", player), lock, player)
+                forbid_item(multiworld.get_location("jessie favourite Pet", player), lock, player)
+                forbid_item(multiworld.get_location("jessie favourite School Subject", player), lock, player)
+                forbid_item(multiworld.get_location("jessie favourite Place to shop", player), lock, player)
+                forbid_item(multiworld.get_location("jessie favourite Trait In Partner", player), lock, player)
+                forbid_item(multiworld.get_location("jessie favourite Own Body Part", player), lock, player)
+                forbid_item(multiworld.get_location("jessie favourite Sex Position", player), lock, player)
+                forbid_item(multiworld.get_location("jessie favourite Porn Category", player), lock, player)
+            if not outfits:
+                forbid_item(multiworld.get_location("jessie outfit 1", player), lock, player)
+                forbid_item(multiworld.get_location("jessie outfit 2", player), lock, player)
+                forbid_item(multiworld.get_location("jessie outfit 3", player), lock, player)
+                forbid_item(multiworld.get_location("jessie outfit 4", player), lock, player)
+                forbid_item(multiworld.get_location("jessie outfit 5", player), lock, player)
+                forbid_item(multiworld.get_location("jessie outfit 6", player), lock, player)
+                forbid_item(multiworld.get_location("jessie outfit 7", player), lock, player)
+                forbid_item(multiworld.get_location("jessie outfit 8", player), lock, player)
+                forbid_item(multiworld.get_location("jessie outfit 9", player), lock, player)
+                forbid_item(multiworld.get_location("jessie outfit 10", player), lock, player)
 
 
     if "lillian" in girls:
@@ -209,36 +213,38 @@ def set_rules(multiworld, player, girls, pairs, startpairs):
             forbid_item(multiworld.get_location("lillian shoe gift 2", player), lock, player)
             forbid_item(multiworld.get_location("lillian shoe gift 3", player), lock, player)
             forbid_item(multiworld.get_location("lillian shoe gift 4", player), lock, player)
-            forbid_item(multiworld.get_location("lillian favourite drink", player), lock, player)
-            forbid_item(multiworld.get_location("lillian favourite Ice Cream Flavor", player), lock, player)
-            forbid_item(multiworld.get_location("lillian favourite Music Genre", player), lock, player)
-            forbid_item(multiworld.get_location("lillian favourite Movie Genre", player), lock, player)
-            forbid_item(multiworld.get_location("lillian favourite Online Activity", player), lock, player)
-            forbid_item(multiworld.get_location("lillian favourite Phone App", player), lock, player)
-            forbid_item(multiworld.get_location("lillian favourite Type Of Exercise", player), lock, player)
-            forbid_item(multiworld.get_location("lillian favourite Outdoor Activity", player), lock, player)
-            forbid_item(multiworld.get_location("lillian favourite Theme Park Ride", player), lock, player)
-            forbid_item(multiworld.get_location("lillian favourite Friday Night", player), lock, player)
-            forbid_item(multiworld.get_location("lillian favourite Sunday Morning", player), lock, player)
-            forbid_item(multiworld.get_location("lillian favourite Weather", player), lock, player)
-            forbid_item(multiworld.get_location("lillian favourite Holiday", player), lock, player)
-            forbid_item(multiworld.get_location("lillian favourite Pet", player), lock, player)
-            forbid_item(multiworld.get_location("lillian favourite School Subject", player), lock, player)
-            forbid_item(multiworld.get_location("lillian favourite Place to shop", player), lock, player)
-            forbid_item(multiworld.get_location("lillian favourite Trait In Partner", player), lock, player)
-            forbid_item(multiworld.get_location("lillian favourite Own Body Part", player), lock, player)
-            forbid_item(multiworld.get_location("lillian favourite Sex Position", player), lock, player)
-            forbid_item(multiworld.get_location("lillian favourite Porn Category", player), lock, player)
-            forbid_item(multiworld.get_location("lillian outfit 1", player), lock, player)
-            forbid_item(multiworld.get_location("lillian outfit 2", player), lock, player)
-            forbid_item(multiworld.get_location("lillian outfit 3", player), lock, player)
-            forbid_item(multiworld.get_location("lillian outfit 4", player), lock, player)
-            forbid_item(multiworld.get_location("lillian outfit 5", player), lock, player)
-            forbid_item(multiworld.get_location("lillian outfit 6", player), lock, player)
-            forbid_item(multiworld.get_location("lillian outfit 7", player), lock, player)
-            forbid_item(multiworld.get_location("lillian outfit 8", player), lock, player)
-            forbid_item(multiworld.get_location("lillian outfit 9", player), lock, player)
-            forbid_item(multiworld.get_location("lillian outfit 10", player), lock, player)
+            if questions:
+                forbid_item(multiworld.get_location("lillian favourite drink", player), lock, player)
+                forbid_item(multiworld.get_location("lillian favourite Ice Cream Flavor", player), lock, player)
+                forbid_item(multiworld.get_location("lillian favourite Music Genre", player), lock, player)
+                forbid_item(multiworld.get_location("lillian favourite Movie Genre", player), lock, player)
+                forbid_item(multiworld.get_location("lillian favourite Online Activity", player), lock, player)
+                forbid_item(multiworld.get_location("lillian favourite Phone App", player), lock, player)
+                forbid_item(multiworld.get_location("lillian favourite Type Of Exercise", player), lock, player)
+                forbid_item(multiworld.get_location("lillian favourite Outdoor Activity", player), lock, player)
+                forbid_item(multiworld.get_location("lillian favourite Theme Park Ride", player), lock, player)
+                forbid_item(multiworld.get_location("lillian favourite Friday Night", player), lock, player)
+                forbid_item(multiworld.get_location("lillian favourite Sunday Morning", player), lock, player)
+                forbid_item(multiworld.get_location("lillian favourite Weather", player), lock, player)
+                forbid_item(multiworld.get_location("lillian favourite Holiday", player), lock, player)
+                forbid_item(multiworld.get_location("lillian favourite Pet", player), lock, player)
+                forbid_item(multiworld.get_location("lillian favourite School Subject", player), lock, player)
+                forbid_item(multiworld.get_location("lillian favourite Place to shop", player), lock, player)
+                forbid_item(multiworld.get_location("lillian favourite Trait In Partner", player), lock, player)
+                forbid_item(multiworld.get_location("lillian favourite Own Body Part", player), lock, player)
+                forbid_item(multiworld.get_location("lillian favourite Sex Position", player), lock, player)
+                forbid_item(multiworld.get_location("lillian favourite Porn Category", player), lock, player)
+            if not outfits:
+                forbid_item(multiworld.get_location("lillian outfit 1", player), lock, player)
+                forbid_item(multiworld.get_location("lillian outfit 2", player), lock, player)
+                forbid_item(multiworld.get_location("lillian outfit 3", player), lock, player)
+                forbid_item(multiworld.get_location("lillian outfit 4", player), lock, player)
+                forbid_item(multiworld.get_location("lillian outfit 5", player), lock, player)
+                forbid_item(multiworld.get_location("lillian outfit 6", player), lock, player)
+                forbid_item(multiworld.get_location("lillian outfit 7", player), lock, player)
+                forbid_item(multiworld.get_location("lillian outfit 8", player), lock, player)
+                forbid_item(multiworld.get_location("lillian outfit 9", player), lock, player)
+                forbid_item(multiworld.get_location("lillian outfit 10", player), lock, player)
 
 
     if "zoey" in girls:
@@ -263,36 +269,38 @@ def set_rules(multiworld, player, girls, pairs, startpairs):
             forbid_item(multiworld.get_location("zoey shoe gift 2", player), lock, player)
             forbid_item(multiworld.get_location("zoey shoe gift 3", player), lock, player)
             forbid_item(multiworld.get_location("zoey shoe gift 4", player), lock, player)
-            forbid_item(multiworld.get_location("zoey favourite drink", player), lock, player)
-            forbid_item(multiworld.get_location("zoey favourite Ice Cream Flavor", player), lock, player)
-            forbid_item(multiworld.get_location("zoey favourite Music Genre", player), lock, player)
-            forbid_item(multiworld.get_location("zoey favourite Movie Genre", player), lock, player)
-            forbid_item(multiworld.get_location("zoey favourite Online Activity", player), lock, player)
-            forbid_item(multiworld.get_location("zoey favourite Phone App", player), lock, player)
-            forbid_item(multiworld.get_location("zoey favourite Type Of Exercise", player), lock, player)
-            forbid_item(multiworld.get_location("zoey favourite Outdoor Activity", player), lock, player)
-            forbid_item(multiworld.get_location("zoey favourite Theme Park Ride", player), lock, player)
-            forbid_item(multiworld.get_location("zoey favourite Friday Night", player), lock, player)
-            forbid_item(multiworld.get_location("zoey favourite Sunday Morning", player), lock, player)
-            forbid_item(multiworld.get_location("zoey favourite Weather", player), lock, player)
-            forbid_item(multiworld.get_location("zoey favourite Holiday", player), lock, player)
-            forbid_item(multiworld.get_location("zoey favourite Pet", player), lock, player)
-            forbid_item(multiworld.get_location("zoey favourite School Subject", player), lock, player)
-            forbid_item(multiworld.get_location("zoey favourite Place to shop", player), lock, player)
-            forbid_item(multiworld.get_location("zoey favourite Trait In Partner", player), lock, player)
-            forbid_item(multiworld.get_location("zoey favourite Own Body Part", player), lock, player)
-            forbid_item(multiworld.get_location("zoey favourite Sex Position", player), lock, player)
-            forbid_item(multiworld.get_location("zoey favourite Porn Category", player), lock, player)
-            forbid_item(multiworld.get_location("zoey outfit 1", player), lock, player)
-            forbid_item(multiworld.get_location("zoey outfit 2", player), lock, player)
-            forbid_item(multiworld.get_location("zoey outfit 3", player), lock, player)
-            forbid_item(multiworld.get_location("zoey outfit 4", player), lock, player)
-            forbid_item(multiworld.get_location("zoey outfit 5", player), lock, player)
-            forbid_item(multiworld.get_location("zoey outfit 6", player), lock, player)
-            forbid_item(multiworld.get_location("zoey outfit 7", player), lock, player)
-            forbid_item(multiworld.get_location("zoey outfit 8", player), lock, player)
-            forbid_item(multiworld.get_location("zoey outfit 9", player), lock, player)
-            forbid_item(multiworld.get_location("zoey outfit 10", player), lock, player)
+            if questions:
+                forbid_item(multiworld.get_location("zoey favourite drink", player), lock, player)
+                forbid_item(multiworld.get_location("zoey favourite Ice Cream Flavor", player), lock, player)
+                forbid_item(multiworld.get_location("zoey favourite Music Genre", player), lock, player)
+                forbid_item(multiworld.get_location("zoey favourite Movie Genre", player), lock, player)
+                forbid_item(multiworld.get_location("zoey favourite Online Activity", player), lock, player)
+                forbid_item(multiworld.get_location("zoey favourite Phone App", player), lock, player)
+                forbid_item(multiworld.get_location("zoey favourite Type Of Exercise", player), lock, player)
+                forbid_item(multiworld.get_location("zoey favourite Outdoor Activity", player), lock, player)
+                forbid_item(multiworld.get_location("zoey favourite Theme Park Ride", player), lock, player)
+                forbid_item(multiworld.get_location("zoey favourite Friday Night", player), lock, player)
+                forbid_item(multiworld.get_location("zoey favourite Sunday Morning", player), lock, player)
+                forbid_item(multiworld.get_location("zoey favourite Weather", player), lock, player)
+                forbid_item(multiworld.get_location("zoey favourite Holiday", player), lock, player)
+                forbid_item(multiworld.get_location("zoey favourite Pet", player), lock, player)
+                forbid_item(multiworld.get_location("zoey favourite School Subject", player), lock, player)
+                forbid_item(multiworld.get_location("zoey favourite Place to shop", player), lock, player)
+                forbid_item(multiworld.get_location("zoey favourite Trait In Partner", player), lock, player)
+                forbid_item(multiworld.get_location("zoey favourite Own Body Part", player), lock, player)
+                forbid_item(multiworld.get_location("zoey favourite Sex Position", player), lock, player)
+                forbid_item(multiworld.get_location("zoey favourite Porn Category", player), lock, player)
+            if not outfits:
+                forbid_item(multiworld.get_location("zoey outfit 1", player), lock, player)
+                forbid_item(multiworld.get_location("zoey outfit 2", player), lock, player)
+                forbid_item(multiworld.get_location("zoey outfit 3", player), lock, player)
+                forbid_item(multiworld.get_location("zoey outfit 4", player), lock, player)
+                forbid_item(multiworld.get_location("zoey outfit 5", player), lock, player)
+                forbid_item(multiworld.get_location("zoey outfit 6", player), lock, player)
+                forbid_item(multiworld.get_location("zoey outfit 7", player), lock, player)
+                forbid_item(multiworld.get_location("zoey outfit 8", player), lock, player)
+                forbid_item(multiworld.get_location("zoey outfit 9", player), lock, player)
+                forbid_item(multiworld.get_location("zoey outfit 10", player), lock, player)
 
 
     if "sarah" in girls:
@@ -317,36 +325,38 @@ def set_rules(multiworld, player, girls, pairs, startpairs):
             forbid_item(multiworld.get_location("sarah shoe gift 2", player), lock, player)
             forbid_item(multiworld.get_location("sarah shoe gift 3", player), lock, player)
             forbid_item(multiworld.get_location("sarah shoe gift 4", player), lock, player)
-            forbid_item(multiworld.get_location("sarah favourite drink", player), lock, player)
-            forbid_item(multiworld.get_location("sarah favourite Ice Cream Flavor", player), lock, player)
-            forbid_item(multiworld.get_location("sarah favourite Music Genre", player), lock, player)
-            forbid_item(multiworld.get_location("sarah favourite Movie Genre", player), lock, player)
-            forbid_item(multiworld.get_location("sarah favourite Online Activity", player), lock, player)
-            forbid_item(multiworld.get_location("sarah favourite Phone App", player), lock, player)
-            forbid_item(multiworld.get_location("sarah favourite Type Of Exercise", player), lock, player)
-            forbid_item(multiworld.get_location("sarah favourite Outdoor Activity", player), lock, player)
-            forbid_item(multiworld.get_location("sarah favourite Theme Park Ride", player), lock, player)
-            forbid_item(multiworld.get_location("sarah favourite Friday Night", player), lock, player)
-            forbid_item(multiworld.get_location("sarah favourite Sunday Morning", player), lock, player)
-            forbid_item(multiworld.get_location("sarah favourite Weather", player), lock, player)
-            forbid_item(multiworld.get_location("sarah favourite Holiday", player), lock, player)
-            forbid_item(multiworld.get_location("sarah favourite Pet", player), lock, player)
-            forbid_item(multiworld.get_location("sarah favourite School Subject", player), lock, player)
-            forbid_item(multiworld.get_location("sarah favourite Place to shop", player), lock, player)
-            forbid_item(multiworld.get_location("sarah favourite Trait In Partner", player), lock, player)
-            forbid_item(multiworld.get_location("sarah favourite Own Body Part", player), lock, player)
-            forbid_item(multiworld.get_location("sarah favourite Sex Position", player), lock, player)
-            forbid_item(multiworld.get_location("sarah favourite Porn Category", player), lock, player)
-            forbid_item(multiworld.get_location("sarah outfit 1", player), lock, player)
-            forbid_item(multiworld.get_location("sarah outfit 2", player), lock, player)
-            forbid_item(multiworld.get_location("sarah outfit 3", player), lock, player)
-            forbid_item(multiworld.get_location("sarah outfit 4", player), lock, player)
-            forbid_item(multiworld.get_location("sarah outfit 5", player), lock, player)
-            forbid_item(multiworld.get_location("sarah outfit 6", player), lock, player)
-            forbid_item(multiworld.get_location("sarah outfit 7", player), lock, player)
-            forbid_item(multiworld.get_location("sarah outfit 8", player), lock, player)
-            forbid_item(multiworld.get_location("sarah outfit 9", player), lock, player)
-            forbid_item(multiworld.get_location("sarah outfit 10", player), lock, player)
+            if questions:
+                forbid_item(multiworld.get_location("sarah favourite drink", player), lock, player)
+                forbid_item(multiworld.get_location("sarah favourite Ice Cream Flavor", player), lock, player)
+                forbid_item(multiworld.get_location("sarah favourite Music Genre", player), lock, player)
+                forbid_item(multiworld.get_location("sarah favourite Movie Genre", player), lock, player)
+                forbid_item(multiworld.get_location("sarah favourite Online Activity", player), lock, player)
+                forbid_item(multiworld.get_location("sarah favourite Phone App", player), lock, player)
+                forbid_item(multiworld.get_location("sarah favourite Type Of Exercise", player), lock, player)
+                forbid_item(multiworld.get_location("sarah favourite Outdoor Activity", player), lock, player)
+                forbid_item(multiworld.get_location("sarah favourite Theme Park Ride", player), lock, player)
+                forbid_item(multiworld.get_location("sarah favourite Friday Night", player), lock, player)
+                forbid_item(multiworld.get_location("sarah favourite Sunday Morning", player), lock, player)
+                forbid_item(multiworld.get_location("sarah favourite Weather", player), lock, player)
+                forbid_item(multiworld.get_location("sarah favourite Holiday", player), lock, player)
+                forbid_item(multiworld.get_location("sarah favourite Pet", player), lock, player)
+                forbid_item(multiworld.get_location("sarah favourite School Subject", player), lock, player)
+                forbid_item(multiworld.get_location("sarah favourite Place to shop", player), lock, player)
+                forbid_item(multiworld.get_location("sarah favourite Trait In Partner", player), lock, player)
+                forbid_item(multiworld.get_location("sarah favourite Own Body Part", player), lock, player)
+                forbid_item(multiworld.get_location("sarah favourite Sex Position", player), lock, player)
+                forbid_item(multiworld.get_location("sarah favourite Porn Category", player), lock, player)
+            if not outfits:
+                forbid_item(multiworld.get_location("sarah outfit 1", player), lock, player)
+                forbid_item(multiworld.get_location("sarah outfit 2", player), lock, player)
+                forbid_item(multiworld.get_location("sarah outfit 3", player), lock, player)
+                forbid_item(multiworld.get_location("sarah outfit 4", player), lock, player)
+                forbid_item(multiworld.get_location("sarah outfit 5", player), lock, player)
+                forbid_item(multiworld.get_location("sarah outfit 6", player), lock, player)
+                forbid_item(multiworld.get_location("sarah outfit 7", player), lock, player)
+                forbid_item(multiworld.get_location("sarah outfit 8", player), lock, player)
+                forbid_item(multiworld.get_location("sarah outfit 9", player), lock, player)
+                forbid_item(multiworld.get_location("sarah outfit 10", player), lock, player)
 
 
     if "lailani" in girls:
@@ -371,36 +381,38 @@ def set_rules(multiworld, player, girls, pairs, startpairs):
             forbid_item(multiworld.get_location("lailani shoe gift 2", player), lock, player)
             forbid_item(multiworld.get_location("lailani shoe gift 3", player), lock, player)
             forbid_item(multiworld.get_location("lailani shoe gift 4", player), lock, player)
-            forbid_item(multiworld.get_location("lailani favourite drink", player), lock, player)
-            forbid_item(multiworld.get_location("lailani favourite Ice Cream Flavor", player), lock, player)
-            forbid_item(multiworld.get_location("lailani favourite Music Genre", player), lock, player)
-            forbid_item(multiworld.get_location("lailani favourite Movie Genre", player), lock, player)
-            forbid_item(multiworld.get_location("lailani favourite Online Activity", player), lock, player)
-            forbid_item(multiworld.get_location("lailani favourite Phone App", player), lock, player)
-            forbid_item(multiworld.get_location("lailani favourite Type Of Exercise", player), lock, player)
-            forbid_item(multiworld.get_location("lailani favourite Outdoor Activity", player), lock, player)
-            forbid_item(multiworld.get_location("lailani favourite Theme Park Ride", player), lock, player)
-            forbid_item(multiworld.get_location("lailani favourite Friday Night", player), lock, player)
-            forbid_item(multiworld.get_location("lailani favourite Sunday Morning", player), lock, player)
-            forbid_item(multiworld.get_location("lailani favourite Weather", player), lock, player)
-            forbid_item(multiworld.get_location("lailani favourite Holiday", player), lock, player)
-            forbid_item(multiworld.get_location("lailani favourite Pet", player), lock, player)
-            forbid_item(multiworld.get_location("lailani favourite School Subject", player), lock, player)
-            forbid_item(multiworld.get_location("lailani favourite Place to shop", player), lock, player)
-            forbid_item(multiworld.get_location("lailani favourite Trait In Partner", player), lock, player)
-            forbid_item(multiworld.get_location("lailani favourite Own Body Part", player), lock, player)
-            forbid_item(multiworld.get_location("lailani favourite Sex Position", player), lock, player)
-            forbid_item(multiworld.get_location("lailani favourite Porn Category", player), lock, player)
-            forbid_item(multiworld.get_location("lailani outfit 1", player), lock, player)
-            forbid_item(multiworld.get_location("lailani outfit 2", player), lock, player)
-            forbid_item(multiworld.get_location("lailani outfit 3", player), lock, player)
-            forbid_item(multiworld.get_location("lailani outfit 4", player), lock, player)
-            forbid_item(multiworld.get_location("lailani outfit 5", player), lock, player)
-            forbid_item(multiworld.get_location("lailani outfit 6", player), lock, player)
-            forbid_item(multiworld.get_location("lailani outfit 7", player), lock, player)
-            forbid_item(multiworld.get_location("lailani outfit 8", player), lock, player)
-            forbid_item(multiworld.get_location("lailani outfit 9", player), lock, player)
-            forbid_item(multiworld.get_location("lailani outfit 10", player), lock, player)
+            if questions:
+                forbid_item(multiworld.get_location("lailani favourite drink", player), lock, player)
+                forbid_item(multiworld.get_location("lailani favourite Ice Cream Flavor", player), lock, player)
+                forbid_item(multiworld.get_location("lailani favourite Music Genre", player), lock, player)
+                forbid_item(multiworld.get_location("lailani favourite Movie Genre", player), lock, player)
+                forbid_item(multiworld.get_location("lailani favourite Online Activity", player), lock, player)
+                forbid_item(multiworld.get_location("lailani favourite Phone App", player), lock, player)
+                forbid_item(multiworld.get_location("lailani favourite Type Of Exercise", player), lock, player)
+                forbid_item(multiworld.get_location("lailani favourite Outdoor Activity", player), lock, player)
+                forbid_item(multiworld.get_location("lailani favourite Theme Park Ride", player), lock, player)
+                forbid_item(multiworld.get_location("lailani favourite Friday Night", player), lock, player)
+                forbid_item(multiworld.get_location("lailani favourite Sunday Morning", player), lock, player)
+                forbid_item(multiworld.get_location("lailani favourite Weather", player), lock, player)
+                forbid_item(multiworld.get_location("lailani favourite Holiday", player), lock, player)
+                forbid_item(multiworld.get_location("lailani favourite Pet", player), lock, player)
+                forbid_item(multiworld.get_location("lailani favourite School Subject", player), lock, player)
+                forbid_item(multiworld.get_location("lailani favourite Place to shop", player), lock, player)
+                forbid_item(multiworld.get_location("lailani favourite Trait In Partner", player), lock, player)
+                forbid_item(multiworld.get_location("lailani favourite Own Body Part", player), lock, player)
+                forbid_item(multiworld.get_location("lailani favourite Sex Position", player), lock, player)
+                forbid_item(multiworld.get_location("lailani favourite Porn Category", player), lock, player)
+            if not outfits:
+                forbid_item(multiworld.get_location("lailani outfit 1", player), lock, player)
+                forbid_item(multiworld.get_location("lailani outfit 2", player), lock, player)
+                forbid_item(multiworld.get_location("lailani outfit 3", player), lock, player)
+                forbid_item(multiworld.get_location("lailani outfit 4", player), lock, player)
+                forbid_item(multiworld.get_location("lailani outfit 5", player), lock, player)
+                forbid_item(multiworld.get_location("lailani outfit 6", player), lock, player)
+                forbid_item(multiworld.get_location("lailani outfit 7", player), lock, player)
+                forbid_item(multiworld.get_location("lailani outfit 8", player), lock, player)
+                forbid_item(multiworld.get_location("lailani outfit 9", player), lock, player)
+                forbid_item(multiworld.get_location("lailani outfit 10", player), lock, player)
 
 
     if "candace" in girls:
@@ -425,36 +437,38 @@ def set_rules(multiworld, player, girls, pairs, startpairs):
             forbid_item(multiworld.get_location("candace shoe gift 2", player), lock, player)
             forbid_item(multiworld.get_location("candace shoe gift 3", player), lock, player)
             forbid_item(multiworld.get_location("candace shoe gift 4", player), lock, player)
-            forbid_item(multiworld.get_location("candace favourite drink", player), lock, player)
-            forbid_item(multiworld.get_location("candace favourite Ice Cream Flavor", player), lock, player)
-            forbid_item(multiworld.get_location("candace favourite Music Genre", player), lock, player)
-            forbid_item(multiworld.get_location("candace favourite Movie Genre", player), lock, player)
-            forbid_item(multiworld.get_location("candace favourite Online Activity", player), lock, player)
-            forbid_item(multiworld.get_location("candace favourite Phone App", player), lock, player)
-            forbid_item(multiworld.get_location("candace favourite Type Of Exercise", player), lock, player)
-            forbid_item(multiworld.get_location("candace favourite Outdoor Activity", player), lock, player)
-            forbid_item(multiworld.get_location("candace favourite Theme Park Ride", player), lock, player)
-            forbid_item(multiworld.get_location("candace favourite Friday Night", player), lock, player)
-            forbid_item(multiworld.get_location("candace favourite Sunday Morning", player), lock, player)
-            forbid_item(multiworld.get_location("candace favourite Weather", player), lock, player)
-            forbid_item(multiworld.get_location("candace favourite Holiday", player), lock, player)
-            forbid_item(multiworld.get_location("candace favourite Pet", player), lock, player)
-            forbid_item(multiworld.get_location("candace favourite School Subject", player), lock, player)
-            forbid_item(multiworld.get_location("candace favourite Place to shop", player), lock, player)
-            forbid_item(multiworld.get_location("candace favourite Trait In Partner", player), lock, player)
-            forbid_item(multiworld.get_location("candace favourite Own Body Part", player), lock, player)
-            forbid_item(multiworld.get_location("candace favourite Sex Position", player), lock, player)
-            forbid_item(multiworld.get_location("candace favourite Porn Category", player), lock, player)
-            forbid_item(multiworld.get_location("candace outfit 1", player), lock, player)
-            forbid_item(multiworld.get_location("candace outfit 2", player), lock, player)
-            forbid_item(multiworld.get_location("candace outfit 3", player), lock, player)
-            forbid_item(multiworld.get_location("candace outfit 4", player), lock, player)
-            forbid_item(multiworld.get_location("candace outfit 5", player), lock, player)
-            forbid_item(multiworld.get_location("candace outfit 6", player), lock, player)
-            forbid_item(multiworld.get_location("candace outfit 7", player), lock, player)
-            forbid_item(multiworld.get_location("candace outfit 8", player), lock, player)
-            forbid_item(multiworld.get_location("candace outfit 9", player), lock, player)
-            forbid_item(multiworld.get_location("candace outfit 10", player), lock, player)
+            if questions:
+                forbid_item(multiworld.get_location("candace favourite drink", player), lock, player)
+                forbid_item(multiworld.get_location("candace favourite Ice Cream Flavor", player), lock, player)
+                forbid_item(multiworld.get_location("candace favourite Music Genre", player), lock, player)
+                forbid_item(multiworld.get_location("candace favourite Movie Genre", player), lock, player)
+                forbid_item(multiworld.get_location("candace favourite Online Activity", player), lock, player)
+                forbid_item(multiworld.get_location("candace favourite Phone App", player), lock, player)
+                forbid_item(multiworld.get_location("candace favourite Type Of Exercise", player), lock, player)
+                forbid_item(multiworld.get_location("candace favourite Outdoor Activity", player), lock, player)
+                forbid_item(multiworld.get_location("candace favourite Theme Park Ride", player), lock, player)
+                forbid_item(multiworld.get_location("candace favourite Friday Night", player), lock, player)
+                forbid_item(multiworld.get_location("candace favourite Sunday Morning", player), lock, player)
+                forbid_item(multiworld.get_location("candace favourite Weather", player), lock, player)
+                forbid_item(multiworld.get_location("candace favourite Holiday", player), lock, player)
+                forbid_item(multiworld.get_location("candace favourite Pet", player), lock, player)
+                forbid_item(multiworld.get_location("candace favourite School Subject", player), lock, player)
+                forbid_item(multiworld.get_location("candace favourite Place to shop", player), lock, player)
+                forbid_item(multiworld.get_location("candace favourite Trait In Partner", player), lock, player)
+                forbid_item(multiworld.get_location("candace favourite Own Body Part", player), lock, player)
+                forbid_item(multiworld.get_location("candace favourite Sex Position", player), lock, player)
+                forbid_item(multiworld.get_location("candace favourite Porn Category", player), lock, player)
+            if not outfits:
+                forbid_item(multiworld.get_location("candace outfit 1", player), lock, player)
+                forbid_item(multiworld.get_location("candace outfit 2", player), lock, player)
+                forbid_item(multiworld.get_location("candace outfit 3", player), lock, player)
+                forbid_item(multiworld.get_location("candace outfit 4", player), lock, player)
+                forbid_item(multiworld.get_location("candace outfit 5", player), lock, player)
+                forbid_item(multiworld.get_location("candace outfit 6", player), lock, player)
+                forbid_item(multiworld.get_location("candace outfit 7", player), lock, player)
+                forbid_item(multiworld.get_location("candace outfit 8", player), lock, player)
+                forbid_item(multiworld.get_location("candace outfit 9", player), lock, player)
+                forbid_item(multiworld.get_location("candace outfit 10", player), lock, player)
 
 
     if "nora" in girls:
@@ -479,36 +493,38 @@ def set_rules(multiworld, player, girls, pairs, startpairs):
             forbid_item(multiworld.get_location("nora shoe gift 2", player), lock, player)
             forbid_item(multiworld.get_location("nora shoe gift 3", player), lock, player)
             forbid_item(multiworld.get_location("nora shoe gift 4", player), lock, player)
-            forbid_item(multiworld.get_location("nora favourite drink", player), lock, player)
-            forbid_item(multiworld.get_location("nora favourite Ice Cream Flavor", player), lock, player)
-            forbid_item(multiworld.get_location("nora favourite Music Genre", player), lock, player)
-            forbid_item(multiworld.get_location("nora favourite Movie Genre", player), lock, player)
-            forbid_item(multiworld.get_location("nora favourite Online Activity", player), lock, player)
-            forbid_item(multiworld.get_location("nora favourite Phone App", player), lock, player)
-            forbid_item(multiworld.get_location("nora favourite Type Of Exercise", player), lock, player)
-            forbid_item(multiworld.get_location("nora favourite Outdoor Activity", player), lock, player)
-            forbid_item(multiworld.get_location("nora favourite Theme Park Ride", player), lock, player)
-            forbid_item(multiworld.get_location("nora favourite Friday Night", player), lock, player)
-            forbid_item(multiworld.get_location("nora favourite Sunday Morning", player), lock, player)
-            forbid_item(multiworld.get_location("nora favourite Weather", player), lock, player)
-            forbid_item(multiworld.get_location("nora favourite Holiday", player), lock, player)
-            forbid_item(multiworld.get_location("nora favourite Pet", player), lock, player)
-            forbid_item(multiworld.get_location("nora favourite School Subject", player), lock, player)
-            forbid_item(multiworld.get_location("nora favourite Place to shop", player), lock, player)
-            forbid_item(multiworld.get_location("nora favourite Trait In Partner", player), lock, player)
-            forbid_item(multiworld.get_location("nora favourite Own Body Part", player), lock, player)
-            forbid_item(multiworld.get_location("nora favourite Sex Position", player), lock, player)
-            forbid_item(multiworld.get_location("nora favourite Porn Category", player), lock, player)
-            forbid_item(multiworld.get_location("nora outfit 1", player), lock, player)
-            forbid_item(multiworld.get_location("nora outfit 2", player), lock, player)
-            forbid_item(multiworld.get_location("nora outfit 3", player), lock, player)
-            forbid_item(multiworld.get_location("nora outfit 4", player), lock, player)
-            forbid_item(multiworld.get_location("nora outfit 5", player), lock, player)
-            forbid_item(multiworld.get_location("nora outfit 6", player), lock, player)
-            forbid_item(multiworld.get_location("nora outfit 7", player), lock, player)
-            forbid_item(multiworld.get_location("nora outfit 8", player), lock, player)
-            forbid_item(multiworld.get_location("nora outfit 9", player), lock, player)
-            forbid_item(multiworld.get_location("nora outfit 10", player), lock, player)
+            if questions:
+                forbid_item(multiworld.get_location("nora favourite drink", player), lock, player)
+                forbid_item(multiworld.get_location("nora favourite Ice Cream Flavor", player), lock, player)
+                forbid_item(multiworld.get_location("nora favourite Music Genre", player), lock, player)
+                forbid_item(multiworld.get_location("nora favourite Movie Genre", player), lock, player)
+                forbid_item(multiworld.get_location("nora favourite Online Activity", player), lock, player)
+                forbid_item(multiworld.get_location("nora favourite Phone App", player), lock, player)
+                forbid_item(multiworld.get_location("nora favourite Type Of Exercise", player), lock, player)
+                forbid_item(multiworld.get_location("nora favourite Outdoor Activity", player), lock, player)
+                forbid_item(multiworld.get_location("nora favourite Theme Park Ride", player), lock, player)
+                forbid_item(multiworld.get_location("nora favourite Friday Night", player), lock, player)
+                forbid_item(multiworld.get_location("nora favourite Sunday Morning", player), lock, player)
+                forbid_item(multiworld.get_location("nora favourite Weather", player), lock, player)
+                forbid_item(multiworld.get_location("nora favourite Holiday", player), lock, player)
+                forbid_item(multiworld.get_location("nora favourite Pet", player), lock, player)
+                forbid_item(multiworld.get_location("nora favourite School Subject", player), lock, player)
+                forbid_item(multiworld.get_location("nora favourite Place to shop", player), lock, player)
+                forbid_item(multiworld.get_location("nora favourite Trait In Partner", player), lock, player)
+                forbid_item(multiworld.get_location("nora favourite Own Body Part", player), lock, player)
+                forbid_item(multiworld.get_location("nora favourite Sex Position", player), lock, player)
+                forbid_item(multiworld.get_location("nora favourite Porn Category", player), lock, player)
+            if not outfits:
+                forbid_item(multiworld.get_location("nora outfit 1", player), lock, player)
+                forbid_item(multiworld.get_location("nora outfit 2", player), lock, player)
+                forbid_item(multiworld.get_location("nora outfit 3", player), lock, player)
+                forbid_item(multiworld.get_location("nora outfit 4", player), lock, player)
+                forbid_item(multiworld.get_location("nora outfit 5", player), lock, player)
+                forbid_item(multiworld.get_location("nora outfit 6", player), lock, player)
+                forbid_item(multiworld.get_location("nora outfit 7", player), lock, player)
+                forbid_item(multiworld.get_location("nora outfit 8", player), lock, player)
+                forbid_item(multiworld.get_location("nora outfit 9", player), lock, player)
+                forbid_item(multiworld.get_location("nora outfit 10", player), lock, player)
 
 
     if "brooke" in girls:
@@ -533,36 +549,38 @@ def set_rules(multiworld, player, girls, pairs, startpairs):
             forbid_item(multiworld.get_location("brooke shoe gift 2", player), lock, player)
             forbid_item(multiworld.get_location("brooke shoe gift 3", player), lock, player)
             forbid_item(multiworld.get_location("brooke shoe gift 4", player), lock, player)
-            forbid_item(multiworld.get_location("brooke favourite drink", player), lock, player)
-            forbid_item(multiworld.get_location("brooke favourite Ice Cream Flavor", player), lock, player)
-            forbid_item(multiworld.get_location("brooke favourite Music Genre", player), lock, player)
-            forbid_item(multiworld.get_location("brooke favourite Movie Genre", player), lock, player)
-            forbid_item(multiworld.get_location("brooke favourite Online Activity", player), lock, player)
-            forbid_item(multiworld.get_location("brooke favourite Phone App", player), lock, player)
-            forbid_item(multiworld.get_location("brooke favourite Type Of Exercise", player), lock, player)
-            forbid_item(multiworld.get_location("brooke favourite Outdoor Activity", player), lock, player)
-            forbid_item(multiworld.get_location("brooke favourite Theme Park Ride", player), lock, player)
-            forbid_item(multiworld.get_location("brooke favourite Friday Night", player), lock, player)
-            forbid_item(multiworld.get_location("brooke favourite Sunday Morning", player), lock, player)
-            forbid_item(multiworld.get_location("brooke favourite Weather", player), lock, player)
-            forbid_item(multiworld.get_location("brooke favourite Holiday", player), lock, player)
-            forbid_item(multiworld.get_location("brooke favourite Pet", player), lock, player)
-            forbid_item(multiworld.get_location("brooke favourite School Subject", player), lock, player)
-            forbid_item(multiworld.get_location("brooke favourite Place to shop", player), lock, player)
-            forbid_item(multiworld.get_location("brooke favourite Trait In Partner", player), lock, player)
-            forbid_item(multiworld.get_location("brooke favourite Own Body Part", player), lock, player)
-            forbid_item(multiworld.get_location("brooke favourite Sex Position", player), lock, player)
-            forbid_item(multiworld.get_location("brooke favourite Porn Category", player), lock, player)
-            forbid_item(multiworld.get_location("brooke outfit 1", player), lock, player)
-            forbid_item(multiworld.get_location("brooke outfit 2", player), lock, player)
-            forbid_item(multiworld.get_location("brooke outfit 3", player), lock, player)
-            forbid_item(multiworld.get_location("brooke outfit 4", player), lock, player)
-            forbid_item(multiworld.get_location("brooke outfit 5", player), lock, player)
-            forbid_item(multiworld.get_location("brooke outfit 6", player), lock, player)
-            forbid_item(multiworld.get_location("brooke outfit 7", player), lock, player)
-            forbid_item(multiworld.get_location("brooke outfit 8", player), lock, player)
-            forbid_item(multiworld.get_location("brooke outfit 9", player), lock, player)
-            forbid_item(multiworld.get_location("brooke outfit 10", player), lock, player)
+            if questions:
+                forbid_item(multiworld.get_location("brooke favourite drink", player), lock, player)
+                forbid_item(multiworld.get_location("brooke favourite Ice Cream Flavor", player), lock, player)
+                forbid_item(multiworld.get_location("brooke favourite Music Genre", player), lock, player)
+                forbid_item(multiworld.get_location("brooke favourite Movie Genre", player), lock, player)
+                forbid_item(multiworld.get_location("brooke favourite Online Activity", player), lock, player)
+                forbid_item(multiworld.get_location("brooke favourite Phone App", player), lock, player)
+                forbid_item(multiworld.get_location("brooke favourite Type Of Exercise", player), lock, player)
+                forbid_item(multiworld.get_location("brooke favourite Outdoor Activity", player), lock, player)
+                forbid_item(multiworld.get_location("brooke favourite Theme Park Ride", player), lock, player)
+                forbid_item(multiworld.get_location("brooke favourite Friday Night", player), lock, player)
+                forbid_item(multiworld.get_location("brooke favourite Sunday Morning", player), lock, player)
+                forbid_item(multiworld.get_location("brooke favourite Weather", player), lock, player)
+                forbid_item(multiworld.get_location("brooke favourite Holiday", player), lock, player)
+                forbid_item(multiworld.get_location("brooke favourite Pet", player), lock, player)
+                forbid_item(multiworld.get_location("brooke favourite School Subject", player), lock, player)
+                forbid_item(multiworld.get_location("brooke favourite Place to shop", player), lock, player)
+                forbid_item(multiworld.get_location("brooke favourite Trait In Partner", player), lock, player)
+                forbid_item(multiworld.get_location("brooke favourite Own Body Part", player), lock, player)
+                forbid_item(multiworld.get_location("brooke favourite Sex Position", player), lock, player)
+                forbid_item(multiworld.get_location("brooke favourite Porn Category", player), lock, player)
+            if not outfits:
+                forbid_item(multiworld.get_location("brooke outfit 1", player), lock, player)
+                forbid_item(multiworld.get_location("brooke outfit 2", player), lock, player)
+                forbid_item(multiworld.get_location("brooke outfit 3", player), lock, player)
+                forbid_item(multiworld.get_location("brooke outfit 4", player), lock, player)
+                forbid_item(multiworld.get_location("brooke outfit 5", player), lock, player)
+                forbid_item(multiworld.get_location("brooke outfit 6", player), lock, player)
+                forbid_item(multiworld.get_location("brooke outfit 7", player), lock, player)
+                forbid_item(multiworld.get_location("brooke outfit 8", player), lock, player)
+                forbid_item(multiworld.get_location("brooke outfit 9", player), lock, player)
+                forbid_item(multiworld.get_location("brooke outfit 10", player), lock, player)
 
 
     if "ashley" in girls:
@@ -587,36 +605,38 @@ def set_rules(multiworld, player, girls, pairs, startpairs):
             forbid_item(multiworld.get_location("ashley shoe gift 2", player), lock, player)
             forbid_item(multiworld.get_location("ashley shoe gift 3", player), lock, player)
             forbid_item(multiworld.get_location("ashley shoe gift 4", player), lock, player)
-            forbid_item(multiworld.get_location("ashley favourite drink", player), lock, player)
-            forbid_item(multiworld.get_location("ashley favourite Ice Cream Flavor", player), lock, player)
-            forbid_item(multiworld.get_location("ashley favourite Music Genre", player), lock, player)
-            forbid_item(multiworld.get_location("ashley favourite Movie Genre", player), lock, player)
-            forbid_item(multiworld.get_location("ashley favourite Online Activity", player), lock, player)
-            forbid_item(multiworld.get_location("ashley favourite Phone App", player), lock, player)
-            forbid_item(multiworld.get_location("ashley favourite Type Of Exercise", player), lock, player)
-            forbid_item(multiworld.get_location("ashley favourite Outdoor Activity", player), lock, player)
-            forbid_item(multiworld.get_location("ashley favourite Theme Park Ride", player), lock, player)
-            forbid_item(multiworld.get_location("ashley favourite Friday Night", player), lock, player)
-            forbid_item(multiworld.get_location("ashley favourite Sunday Morning", player), lock, player)
-            forbid_item(multiworld.get_location("ashley favourite Weather", player), lock, player)
-            forbid_item(multiworld.get_location("ashley favourite Holiday", player), lock, player)
-            forbid_item(multiworld.get_location("ashley favourite Pet", player), lock, player)
-            forbid_item(multiworld.get_location("ashley favourite School Subject", player), lock, player)
-            forbid_item(multiworld.get_location("ashley favourite Place to shop", player), lock, player)
-            forbid_item(multiworld.get_location("ashley favourite Trait In Partner", player), lock, player)
-            forbid_item(multiworld.get_location("ashley favourite Own Body Part", player), lock, player)
-            forbid_item(multiworld.get_location("ashley favourite Sex Position", player), lock, player)
-            forbid_item(multiworld.get_location("ashley favourite Porn Category", player), lock, player)
-            forbid_item(multiworld.get_location("ashley outfit 1", player), lock, player)
-            forbid_item(multiworld.get_location("ashley outfit 2", player), lock, player)
-            forbid_item(multiworld.get_location("ashley outfit 3", player), lock, player)
-            forbid_item(multiworld.get_location("ashley outfit 4", player), lock, player)
-            forbid_item(multiworld.get_location("ashley outfit 5", player), lock, player)
-            forbid_item(multiworld.get_location("ashley outfit 6", player), lock, player)
-            forbid_item(multiworld.get_location("ashley outfit 7", player), lock, player)
-            forbid_item(multiworld.get_location("ashley outfit 8", player), lock, player)
-            forbid_item(multiworld.get_location("ashley outfit 9", player), lock, player)
-            forbid_item(multiworld.get_location("ashley outfit 10", player), lock, player)
+            if questions:
+                forbid_item(multiworld.get_location("ashley favourite drink", player), lock, player)
+                forbid_item(multiworld.get_location("ashley favourite Ice Cream Flavor", player), lock, player)
+                forbid_item(multiworld.get_location("ashley favourite Music Genre", player), lock, player)
+                forbid_item(multiworld.get_location("ashley favourite Movie Genre", player), lock, player)
+                forbid_item(multiworld.get_location("ashley favourite Online Activity", player), lock, player)
+                forbid_item(multiworld.get_location("ashley favourite Phone App", player), lock, player)
+                forbid_item(multiworld.get_location("ashley favourite Type Of Exercise", player), lock, player)
+                forbid_item(multiworld.get_location("ashley favourite Outdoor Activity", player), lock, player)
+                forbid_item(multiworld.get_location("ashley favourite Theme Park Ride", player), lock, player)
+                forbid_item(multiworld.get_location("ashley favourite Friday Night", player), lock, player)
+                forbid_item(multiworld.get_location("ashley favourite Sunday Morning", player), lock, player)
+                forbid_item(multiworld.get_location("ashley favourite Weather", player), lock, player)
+                forbid_item(multiworld.get_location("ashley favourite Holiday", player), lock, player)
+                forbid_item(multiworld.get_location("ashley favourite Pet", player), lock, player)
+                forbid_item(multiworld.get_location("ashley favourite School Subject", player), lock, player)
+                forbid_item(multiworld.get_location("ashley favourite Place to shop", player), lock, player)
+                forbid_item(multiworld.get_location("ashley favourite Trait In Partner", player), lock, player)
+                forbid_item(multiworld.get_location("ashley favourite Own Body Part", player), lock, player)
+                forbid_item(multiworld.get_location("ashley favourite Sex Position", player), lock, player)
+                forbid_item(multiworld.get_location("ashley favourite Porn Category", player), lock, player)
+            if not outfits:
+                forbid_item(multiworld.get_location("ashley outfit 1", player), lock, player)
+                forbid_item(multiworld.get_location("ashley outfit 2", player), lock, player)
+                forbid_item(multiworld.get_location("ashley outfit 3", player), lock, player)
+                forbid_item(multiworld.get_location("ashley outfit 4", player), lock, player)
+                forbid_item(multiworld.get_location("ashley outfit 5", player), lock, player)
+                forbid_item(multiworld.get_location("ashley outfit 6", player), lock, player)
+                forbid_item(multiworld.get_location("ashley outfit 7", player), lock, player)
+                forbid_item(multiworld.get_location("ashley outfit 8", player), lock, player)
+                forbid_item(multiworld.get_location("ashley outfit 9", player), lock, player)
+                forbid_item(multiworld.get_location("ashley outfit 10", player), lock, player)
 
 
     if "abia" in girls:
@@ -641,36 +661,38 @@ def set_rules(multiworld, player, girls, pairs, startpairs):
             forbid_item(multiworld.get_location("abia shoe gift 2", player), lock, player)
             forbid_item(multiworld.get_location("abia shoe gift 3", player), lock, player)
             forbid_item(multiworld.get_location("abia shoe gift 4", player), lock, player)
-            forbid_item(multiworld.get_location("abia favourite drink", player), lock, player)
-            forbid_item(multiworld.get_location("abia favourite Ice Cream Flavor", player), lock, player)
-            forbid_item(multiworld.get_location("abia favourite Music Genre", player), lock, player)
-            forbid_item(multiworld.get_location("abia favourite Movie Genre", player), lock, player)
-            forbid_item(multiworld.get_location("abia favourite Online Activity", player), lock, player)
-            forbid_item(multiworld.get_location("abia favourite Phone App", player), lock, player)
-            forbid_item(multiworld.get_location("abia favourite Type Of Exercise", player), lock, player)
-            forbid_item(multiworld.get_location("abia favourite Outdoor Activity", player), lock, player)
-            forbid_item(multiworld.get_location("abia favourite Theme Park Ride", player), lock, player)
-            forbid_item(multiworld.get_location("abia favourite Friday Night", player), lock, player)
-            forbid_item(multiworld.get_location("abia favourite Sunday Morning", player), lock, player)
-            forbid_item(multiworld.get_location("abia favourite Weather", player), lock, player)
-            forbid_item(multiworld.get_location("abia favourite Holiday", player), lock, player)
-            forbid_item(multiworld.get_location("abia favourite Pet", player), lock, player)
-            forbid_item(multiworld.get_location("abia favourite School Subject", player), lock, player)
-            forbid_item(multiworld.get_location("abia favourite Place to shop", player), lock, player)
-            forbid_item(multiworld.get_location("abia favourite Trait In Partner", player), lock, player)
-            forbid_item(multiworld.get_location("abia favourite Own Body Part", player), lock, player)
-            forbid_item(multiworld.get_location("abia favourite Sex Position", player), lock, player)
-            forbid_item(multiworld.get_location("abia favourite Porn Category", player), lock, player)
-            forbid_item(multiworld.get_location("abia outfit 1", player), lock, player)
-            forbid_item(multiworld.get_location("abia outfit 2", player), lock, player)
-            forbid_item(multiworld.get_location("abia outfit 3", player), lock, player)
-            forbid_item(multiworld.get_location("abia outfit 4", player), lock, player)
-            forbid_item(multiworld.get_location("abia outfit 5", player), lock, player)
-            forbid_item(multiworld.get_location("abia outfit 6", player), lock, player)
-            forbid_item(multiworld.get_location("abia outfit 7", player), lock, player)
-            forbid_item(multiworld.get_location("abia outfit 8", player), lock, player)
-            forbid_item(multiworld.get_location("abia outfit 9", player), lock, player)
-            forbid_item(multiworld.get_location("abia outfit 10", player), lock, player)
+            if questions:
+                forbid_item(multiworld.get_location("abia favourite drink", player), lock, player)
+                forbid_item(multiworld.get_location("abia favourite Ice Cream Flavor", player), lock, player)
+                forbid_item(multiworld.get_location("abia favourite Music Genre", player), lock, player)
+                forbid_item(multiworld.get_location("abia favourite Movie Genre", player), lock, player)
+                forbid_item(multiworld.get_location("abia favourite Online Activity", player), lock, player)
+                forbid_item(multiworld.get_location("abia favourite Phone App", player), lock, player)
+                forbid_item(multiworld.get_location("abia favourite Type Of Exercise", player), lock, player)
+                forbid_item(multiworld.get_location("abia favourite Outdoor Activity", player), lock, player)
+                forbid_item(multiworld.get_location("abia favourite Theme Park Ride", player), lock, player)
+                forbid_item(multiworld.get_location("abia favourite Friday Night", player), lock, player)
+                forbid_item(multiworld.get_location("abia favourite Sunday Morning", player), lock, player)
+                forbid_item(multiworld.get_location("abia favourite Weather", player), lock, player)
+                forbid_item(multiworld.get_location("abia favourite Holiday", player), lock, player)
+                forbid_item(multiworld.get_location("abia favourite Pet", player), lock, player)
+                forbid_item(multiworld.get_location("abia favourite School Subject", player), lock, player)
+                forbid_item(multiworld.get_location("abia favourite Place to shop", player), lock, player)
+                forbid_item(multiworld.get_location("abia favourite Trait In Partner", player), lock, player)
+                forbid_item(multiworld.get_location("abia favourite Own Body Part", player), lock, player)
+                forbid_item(multiworld.get_location("abia favourite Sex Position", player), lock, player)
+                forbid_item(multiworld.get_location("abia favourite Porn Category", player), lock, player)
+            if not outfits:
+                forbid_item(multiworld.get_location("abia outfit 1", player), lock, player)
+                forbid_item(multiworld.get_location("abia outfit 2", player), lock, player)
+                forbid_item(multiworld.get_location("abia outfit 3", player), lock, player)
+                forbid_item(multiworld.get_location("abia outfit 4", player), lock, player)
+                forbid_item(multiworld.get_location("abia outfit 5", player), lock, player)
+                forbid_item(multiworld.get_location("abia outfit 6", player), lock, player)
+                forbid_item(multiworld.get_location("abia outfit 7", player), lock, player)
+                forbid_item(multiworld.get_location("abia outfit 8", player), lock, player)
+                forbid_item(multiworld.get_location("abia outfit 9", player), lock, player)
+                forbid_item(multiworld.get_location("abia outfit 10", player), lock, player)
 
 
     if "polly" in girls:
@@ -695,36 +717,38 @@ def set_rules(multiworld, player, girls, pairs, startpairs):
             forbid_item(multiworld.get_location("polly shoe gift 2", player), lock, player)
             forbid_item(multiworld.get_location("polly shoe gift 3", player), lock, player)
             forbid_item(multiworld.get_location("polly shoe gift 4", player), lock, player)
-            forbid_item(multiworld.get_location("polly favourite drink", player), lock, player)
-            forbid_item(multiworld.get_location("polly favourite Ice Cream Flavor", player), lock, player)
-            forbid_item(multiworld.get_location("polly favourite Music Genre", player), lock, player)
-            forbid_item(multiworld.get_location("polly favourite Movie Genre", player), lock, player)
-            forbid_item(multiworld.get_location("polly favourite Online Activity", player), lock, player)
-            forbid_item(multiworld.get_location("polly favourite Phone App", player), lock, player)
-            forbid_item(multiworld.get_location("polly favourite Type Of Exercise", player), lock, player)
-            forbid_item(multiworld.get_location("polly favourite Outdoor Activity", player), lock, player)
-            forbid_item(multiworld.get_location("polly favourite Theme Park Ride", player), lock, player)
-            forbid_item(multiworld.get_location("polly favourite Friday Night", player), lock, player)
-            forbid_item(multiworld.get_location("polly favourite Sunday Morning", player), lock, player)
-            forbid_item(multiworld.get_location("polly favourite Weather", player), lock, player)
-            forbid_item(multiworld.get_location("polly favourite Holiday", player), lock, player)
-            forbid_item(multiworld.get_location("polly favourite Pet", player), lock, player)
-            forbid_item(multiworld.get_location("polly favourite School Subject", player), lock, player)
-            forbid_item(multiworld.get_location("polly favourite Place to shop", player), lock, player)
-            forbid_item(multiworld.get_location("polly favourite Trait In Partner", player), lock, player)
-            forbid_item(multiworld.get_location("polly favourite Own Body Part", player), lock, player)
-            forbid_item(multiworld.get_location("polly favourite Sex Position", player), lock, player)
-            forbid_item(multiworld.get_location("polly favourite Porn Category", player), lock, player)
-            forbid_item(multiworld.get_location("polly outfit 1", player), lock, player)
-            forbid_item(multiworld.get_location("polly outfit 2", player), lock, player)
-            forbid_item(multiworld.get_location("polly outfit 3", player), lock, player)
-            forbid_item(multiworld.get_location("polly outfit 4", player), lock, player)
-            forbid_item(multiworld.get_location("polly outfit 5", player), lock, player)
-            forbid_item(multiworld.get_location("polly outfit 6", player), lock, player)
-            forbid_item(multiworld.get_location("polly outfit 7", player), lock, player)
-            forbid_item(multiworld.get_location("polly outfit 8", player), lock, player)
-            forbid_item(multiworld.get_location("polly outfit 9", player), lock, player)
-            forbid_item(multiworld.get_location("polly outfit 10", player), lock, player)
+            if questions:
+                forbid_item(multiworld.get_location("polly favourite drink", player), lock, player)
+                forbid_item(multiworld.get_location("polly favourite Ice Cream Flavor", player), lock, player)
+                forbid_item(multiworld.get_location("polly favourite Music Genre", player), lock, player)
+                forbid_item(multiworld.get_location("polly favourite Movie Genre", player), lock, player)
+                forbid_item(multiworld.get_location("polly favourite Online Activity", player), lock, player)
+                forbid_item(multiworld.get_location("polly favourite Phone App", player), lock, player)
+                forbid_item(multiworld.get_location("polly favourite Type Of Exercise", player), lock, player)
+                forbid_item(multiworld.get_location("polly favourite Outdoor Activity", player), lock, player)
+                forbid_item(multiworld.get_location("polly favourite Theme Park Ride", player), lock, player)
+                forbid_item(multiworld.get_location("polly favourite Friday Night", player), lock, player)
+                forbid_item(multiworld.get_location("polly favourite Sunday Morning", player), lock, player)
+                forbid_item(multiworld.get_location("polly favourite Weather", player), lock, player)
+                forbid_item(multiworld.get_location("polly favourite Holiday", player), lock, player)
+                forbid_item(multiworld.get_location("polly favourite Pet", player), lock, player)
+                forbid_item(multiworld.get_location("polly favourite School Subject", player), lock, player)
+                forbid_item(multiworld.get_location("polly favourite Place to shop", player), lock, player)
+                forbid_item(multiworld.get_location("polly favourite Trait In Partner", player), lock, player)
+                forbid_item(multiworld.get_location("polly favourite Own Body Part", player), lock, player)
+                forbid_item(multiworld.get_location("polly favourite Sex Position", player), lock, player)
+                forbid_item(multiworld.get_location("polly favourite Porn Category", player), lock, player)
+            if not outfits:
+                forbid_item(multiworld.get_location("polly outfit 1", player), lock, player)
+                forbid_item(multiworld.get_location("polly outfit 2", player), lock, player)
+                forbid_item(multiworld.get_location("polly outfit 3", player), lock, player)
+                forbid_item(multiworld.get_location("polly outfit 4", player), lock, player)
+                forbid_item(multiworld.get_location("polly outfit 5", player), lock, player)
+                forbid_item(multiworld.get_location("polly outfit 6", player), lock, player)
+                forbid_item(multiworld.get_location("polly outfit 7", player), lock, player)
+                forbid_item(multiworld.get_location("polly outfit 8", player), lock, player)
+                forbid_item(multiworld.get_location("polly outfit 9", player), lock, player)
+                forbid_item(multiworld.get_location("polly outfit 10", player), lock, player)
 
 
     if "(abia/lola)" in pairs:
@@ -944,185 +968,3 @@ def set_rules(multiworld, player, girls, pairs, startpairs):
         forbid_item(multiworld.get_location("Pair Lovers (brooke/polly)", player), "Pair Unlock (brooke/polly)", player)
 
 
-def girlaccess2(state: CollectionState, player, girl) -> bool:
-    if girl == "lola":
-        if not state.has("Unlock Girl(lola)", player):
-            return False
-        else:
-            if state.has("Unlock Girl(abia)", player) and state.has("Pair Unlock (abia/lola)", player):
-                return True
-            elif state.has("Unlock Girl(nora)", player) and state.has("Pair Unlock (lola/nora)", player):
-                return True
-            elif state.has("Unlock Girl(jessie)", player) and state.has("Pair Unlock (jessie/lola)", player):
-                return True
-            elif state.has("Unlock Girl(zoey)", player) and state.has("Pair Unlock (lola/zoey)", player):
-                return True
-            else:
-                return False
-
-    elif girl == "jessie":
-        if not state.has("Unlock Girl(jessie)", player):
-            return False
-        else:
-            if state.has("Unlock Girl(lailani)", player) and state.has("Pair Unlock (jessie/lailani)", player):
-                return True
-            elif state.has("Unlock Girl(brooke)", player) and state.has("Pair Unlock (brooke/jessie)", player):
-                return True
-            elif state.has("Unlock Girl(lola)", player) and state.has("Pair Unlock (jessie/lola)", player):
-                return True
-            elif state.has("Unlock Girl(abia)", player) and state.has("Pair Unlock (abia/jessie)", player):
-                return True
-            else:
-                return False
-
-    elif girl == "lillian":
-        if not state.has("Unlock Girl(lillian)", player):
-            return False
-        else:
-            if state.has("Unlock Girl(ashley)", player) and state.has("Pair Unlock (ashley/lillian)", player):
-                return True
-            elif state.has("Unlock Girl(zoey)", player) and state.has("Pair Unlock (lillian/zoey)", player):
-                return True
-            elif state.has("Unlock Girl(lailani)", player) and state.has("Pair Unlock (lailani/lillian)", player):
-                return True
-            elif state.has("Unlock Girl(abia)", player) and state.has("Pair Unlock (abia/lillian)", player):
-                return True
-            else:
-                return False
-
-    elif girl == "zoey":
-        if not state.has("Unlock Girl(zoey)", player):
-            return False
-        else:
-            if state.has("Unlock Girl(lillian)", player) and state.has("Pair Unlock (lillian/zoey)", player):
-                return True
-            elif state.has("Unlock Girl(lola)", player) and state.has("Pair Unlock (lola/zoey)", player):
-                return True
-            elif state.has("Unlock Girl(sarah)", player) and state.has("Pair Unlock (sarah/zoey)", player):
-                return True
-            elif state.has("Unlock Girl(polly)", player) and state.has("Pair Unlock (polly/zoey)", player):
-                return True
-            else:
-                return False
-
-    elif girl == "sarah":
-        if not state.has("Unlock Girl(sarah)", player):
-            return False
-        else:
-            if state.has("Unlock Girl(lailani)", player) and state.has("Pair Unlock (lailani/sarah)", player):
-                return True
-            elif state.has("Unlock Girl(zoey)", player) and state.has("Pair Unlock (sarah/zoey)", player):
-                return True
-            elif state.has("Unlock Girl(nora)", player) and state.has("Pair Unlock (nora/sarah)", player):
-                return True
-            elif state.has("Unlock Girl(brooke)", player) and state.has("Pair Unlock (brooke/sarah)", player):
-                return True
-            else:
-                return False
-
-    elif girl == "lailani":
-        if not state.has("Unlock Girl(lailani)", player):
-            return False
-        else:
-            if state.has("Unlock Girl(sarah)", player) and state.has("Pair Unlock (lailani/sarah)", player):
-                return True
-            elif state.has("Unlock Girl(jessie)", player) and state.has("Pair Unlock (jessie/lailani)", player):
-                return True
-            elif state.has("Unlock Girl(lillian)", player) and state.has("Pair Unlock (lailani/lillian)", player):
-                return True
-            elif state.has("Unlock Girl(candace)", player) and state.has("Pair Unlock (candace/lailani)", player):
-                return True
-            else:
-                return False
-
-    elif girl == "candace":
-        if not state.has("Unlock Girl(candace)", player):
-            return False
-        else:
-            if state.has("Unlock Girl(nora)", player) and state.has("Pair Unlock (candace/nora)", player):
-                return True
-            elif state.has("Unlock Girl(lailani)", player) and state.has("Pair Unlock (candace/lailani)", player):
-                return True
-            elif state.has("Unlock Girl(abia)", player) and state.has("Pair Unlock (abia/candace)", player):
-                return True
-            elif state.has("Unlock Girl(polly)", player) and state.has("Pair Unlock (candace/polly)", player):
-                return True
-            else:
-                return False
-
-    elif girl == "nora":
-        if not state.has("Unlock Girl(nora)", player):
-            return False
-        else:
-            if state.has("Unlock Girl(lola)", player) and state.has("Pair Unlock (lola/nora)", player):
-                return True
-            elif state.has("Unlock Girl(candace)", player) and state.has("Pair Unlock (candace/nora)", player):
-                return True
-            elif state.has("Unlock Girl(sarah)", player) and state.has("Pair Unlock (nora/sarah)", player):
-                return True
-            elif state.has("Unlock Girl(ashley)", player) and state.has("Pair Unlock (ashley/nora)", player):
-                return True
-            else:
-                return False
-
-    elif girl == "brooke":
-        if not state.has("Unlock Girl(brooke)", player):
-            return False
-        else:
-            if state.has("Unlock Girl(jessie)", player) and state.has("Pair Unlock (brooke/jessie)", player):
-                return True
-            elif state.has("Unlock Girl(sarah)", player) and state.has("Pair Unlock (brooke/sarah)", player):
-                return True
-            elif state.has("Unlock Girl(ashley)", player) and state.has("Pair Unlock (ashley/brooke)", player):
-                return True
-            elif state.has("Unlock Girl(polly)", player) and state.has("Pair Unlock (brooke/polly)", player):
-                return True
-            else:
-                return False
-
-    elif girl == "ashley":
-        if not state.has("Unlock Girl(ashley)", player):
-            return False
-        else:
-            if state.has("Unlock Girl(polly)", player) and state.has("Pair Unlock (ashley/polly)", player):
-                return True
-            elif state.has("Unlock Girl(lillian)", player) and state.has("Pair Unlock (ashley/lillian)", player):
-                return True
-            elif state.has("Unlock Girl(nora)", player) and state.has("Pair Unlock (ashley/nora)", player):
-                return True
-            elif state.has("Unlock Girl(brooke)", player) and state.has("Pair Unlock (ashley/brooke)", player):
-                return True
-            else:
-                return False
-
-    elif girl == "abia":
-        if not state.has("Unlock Girl(abia)", player):
-            return False
-        else:
-            if state.has("Unlock Girl(lola)", player) and state.has("Pair Unlock (abia/lola)", player):
-                return True
-            elif state.has("Unlock Girl(jessie)", player) and state.has("Pair Unlock (abia/jessie)", player):
-                return True
-            elif state.has("Unlock Girl(lillian)", player) and state.has("Pair Unlock (abia/lillian)", player):
-                return True
-            elif state.has("Unlock Girl(candace)", player) and state.has("Pair Unlock (abia/candace)", player):
-                return True
-            else:
-                return False
-
-    elif girl == "polly":
-        if not state.has("Unlock Girl(polly)", player):
-            return False
-        else:
-            if state.has("Unlock Girl(ashley)", player) and state.has("Pair Unlock (ashley/polly)", player):
-                return True
-            elif state.has("Unlock Girl(zoey)", player) and state.has("Pair Unlock (polly/zoey)", player):
-                return True
-            elif state.has("Unlock Girl(candace)", player) and state.has("Pair Unlock (candace/polly)", player):
-                return True
-            elif state.has("Unlock Girl(brooke)", player) and state.has("Pair Unlock (brooke/polly)", player):
-                return True
-            else:
-                return False
-
-    return False

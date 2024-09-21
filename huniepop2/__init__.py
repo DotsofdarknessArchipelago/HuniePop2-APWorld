@@ -14,7 +14,7 @@ from ..generic.Rules import forbid_item, set_rule, add_rule
 
 class HuniePop2(World):
     game = "Hunie Pop 2"
-    worldversion = "0.4.0"
+    worldversion = "0.4.1"
     item_name_to_id = item_table
 
     options_dataclass = HP2Options
@@ -434,16 +434,20 @@ class HuniePop2(World):
         self.multiworld.get_location("boss_location", self.player).place_locked_item(self.create_item("Victory"))
         self.multiworld.completion_condition[self.player] = lambda state: state.has("Victory", self.player)
 
-        set_rules(self.multiworld, self.player, self.girls_enabled, self.pairs_enabled, self.startingpairs)
+        set_rules(self.multiworld, self.player, self.girls_enabled, self.pairs_enabled, self.startingpairs, self.options.enable_questions.value, self.options.disable_outfits.value)
 
         if self.options.lovers_instead_wings.value:
+            boss = set()
             for pair in self.pairs_enabled:
-                add_rule(self.multiworld.get_entrance("hub-boss", self.player), lambda state: state.has(f"Pair Unlock {pair}", self.player))
+                boss.add(f"Pair Unlock {pair}")
             for girl in self.girls_enabled:
-                add_rule(self.multiworld.get_entrance("hub-boss", self.player), lambda state: state.has(f"Unlock Girl({girl})", self.player))
+                boss.add(f"Unlock Girl({girl})")
+            set_rule(self.multiworld.get_entrance("hub-boss", self.player), lambda state: state.has_all(boss, self.player))
         else:
+            wings = set()
             for pair in self.pairs_enabled:
-                add_rule(self.multiworld.get_entrance("hub-boss", self.player), lambda state: state.has(f"Fairy Wings {pair}", self.player))
+                wings.add(f"Fairy Wings {pair}")
+            set_rule(self.multiworld.get_entrance("hub-boss", self.player), lambda state: state.has_all(wings, self.player))
 
 
         #visualize_regions(self.multiworld.get_region("Menu", self.player), "my_world.puml")

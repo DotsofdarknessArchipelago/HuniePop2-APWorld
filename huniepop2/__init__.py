@@ -1,21 +1,26 @@
-import random
+from random import randint
 
-from BaseClasses import ItemClassification, Region, CollectionState
-from Utils import visualize_regions
+from BaseClasses import ItemClassification, Region
 from worlds.AutoWorld import World
 from .Items import item_table, HP2Item, fairy_wings_table, gift_unique_table, girl_unlock_table, pair_unlock_table, \
-    tokekn_lvup_table, gift_shoe_table, baggage_table
+    tokekn_lvup_table, gift_shoe_table, baggage_table, outfits_table, itemgen_to_name
 
-from .Locations import location_table, HP2Location
+from .Locations import location_table, HP2Location, locationgen_to_name
 from .Options import HP2Options, starting_pairs, starting_girls
 from .Rules import set_rules
-from ..generic.Rules import forbid_item, set_rule, add_rule
+from ..generic.Rules import  set_rule
 
 
 class HuniePop2(World):
     game = "Hunie Pop 2"
-    worldversion = "0.4.1"
+    worldversion = "0.5.0"
     item_name_to_id = item_table
+    item_id_to_name = {item_table[name]: name for name in item_table}
+    item_name_groups = {
+        "wings": fairy_wings_table,
+        "girls": girl_unlock_table,
+        "pairs": pair_unlock_table
+    }
 
     options_dataclass = HP2Options
     options: HP2Options
@@ -24,6 +29,7 @@ class HuniePop2(World):
     startinggirls = []
     shopslots = 0
     trashitems = 0
+    trashitemlist = []
 
 
     location_name_to_id = location_table
@@ -325,27 +331,27 @@ class HuniePop2(World):
                 }, HP2Location)
 
             girlregion.add_locations({
-                f"{girl} unique gift 1": self.location_name_to_id[f"{girl} unique gift 1"],
-                f"{girl} unique gift 2": self.location_name_to_id[f"{girl} unique gift 2"],
-                f"{girl} unique gift 3": self.location_name_to_id[f"{girl} unique gift 3"],
-                f"{girl} unique gift 4": self.location_name_to_id[f"{girl} unique gift 4"],
-                f"{girl} shoe gift 1": self.location_name_to_id[f"{girl} shoe gift 1"],
-                f"{girl} shoe gift 2": self.location_name_to_id[f"{girl} shoe gift 2"],
-                f"{girl} shoe gift 3": self.location_name_to_id[f"{girl} shoe gift 3"],
-                f"{girl} shoe gift 4": self.location_name_to_id[f"{girl} shoe gift 4"]}, HP2Location)
+                locationgen_to_name[f"{girl} unique gift 1"]: self.location_name_to_id[locationgen_to_name[f"{girl} unique gift 1"]],
+                locationgen_to_name[f"{girl} unique gift 2"]: self.location_name_to_id[locationgen_to_name[f"{girl} unique gift 2"]],
+                locationgen_to_name[f"{girl} unique gift 3"]: self.location_name_to_id[locationgen_to_name[f"{girl} unique gift 3"]],
+                locationgen_to_name[f"{girl} unique gift 4"]: self.location_name_to_id[locationgen_to_name[f"{girl} unique gift 4"]],
+                locationgen_to_name[f"{girl} shoe gift 1"]: self.location_name_to_id[locationgen_to_name[f"{girl} shoe gift 1"]],
+                locationgen_to_name[f"{girl} shoe gift 2"]: self.location_name_to_id[locationgen_to_name[f"{girl} shoe gift 2"]],
+                locationgen_to_name[f"{girl} shoe gift 3"]: self.location_name_to_id[locationgen_to_name[f"{girl} shoe gift 3"]],
+                locationgen_to_name[f"{girl} shoe gift 4"]: self.location_name_to_id[locationgen_to_name[f"{girl} shoe gift 4"]]}, HP2Location)
 
             if not self.options.disable_outfits.value:
                 girlregion.add_locations({
-                    f"{girl} outfit 1": self.location_name_to_id[f"{girl} outfit 1"],
-                    f"{girl} outfit 2": self.location_name_to_id[f"{girl} outfit 2"],
-                    f"{girl} outfit 3": self.location_name_to_id[f"{girl} outfit 3"],
-                    f"{girl} outfit 4": self.location_name_to_id[f"{girl} outfit 4"],
-                    f"{girl} outfit 5": self.location_name_to_id[f"{girl} outfit 5"],
-                    f"{girl} outfit 6": self.location_name_to_id[f"{girl} outfit 6"],
-                    f"{girl} outfit 7": self.location_name_to_id[f"{girl} outfit 7"],
-                    f"{girl} outfit 8": self.location_name_to_id[f"{girl} outfit 8"],
-                    f"{girl} outfit 9": self.location_name_to_id[f"{girl} outfit 9"],
-                    f"{girl} outfit 10": self.location_name_to_id[f"{girl} outfit 10"]}, HP2Location)
+                    locationgen_to_name[f"{girl} outfit 1"]: self.location_name_to_id[locationgen_to_name[f"{girl} outfit 1"]],
+                    locationgen_to_name[f"{girl} outfit 2"]: self.location_name_to_id[locationgen_to_name[f"{girl} outfit 2"]],
+                    locationgen_to_name[f"{girl} outfit 3"]: self.location_name_to_id[locationgen_to_name[f"{girl} outfit 3"]],
+                    locationgen_to_name[f"{girl} outfit 4"]: self.location_name_to_id[locationgen_to_name[f"{girl} outfit 4"]],
+                    locationgen_to_name[f"{girl} outfit 5"]: self.location_name_to_id[locationgen_to_name[f"{girl} outfit 5"]],
+                    locationgen_to_name[f"{girl} outfit 6"]: self.location_name_to_id[locationgen_to_name[f"{girl} outfit 6"]],
+                    locationgen_to_name[f"{girl} outfit 7"]: self.location_name_to_id[locationgen_to_name[f"{girl} outfit 7"]],
+                    locationgen_to_name[f"{girl} outfit 8"]: self.location_name_to_id[locationgen_to_name[f"{girl} outfit 8"]],
+                    locationgen_to_name[f"{girl} outfit 9"]: self.location_name_to_id[locationgen_to_name[f"{girl} outfit 9"]],
+                    locationgen_to_name[f"{girl} outfit 10"]: self.location_name_to_id[locationgen_to_name[f"{girl} outfit 10"]]}, HP2Location)
 
 
             hub_region.connect(girlregion, f"hub-{girl}1")
@@ -360,10 +366,10 @@ class HuniePop2(World):
     def create_item(self, name: str) -> HP2Item:
         if (name ==  "Victory"):
             return HP2Item(name, ItemClassification.progression, 69420346, self.player)
-        if girl_unlock_table.get(name) is not None or pair_unlock_table.get(name) is not None or gift_unique_table.get(name) is not None or gift_shoe_table.get(name) is not None or fairy_wings_table.get(name) is not None:
+        if name in girl_unlock_table or name in pair_unlock_table or name in gift_unique_table or name in gift_shoe_table or name in fairy_wings_table or name in outfits_table:
             #print(f"{name}: is progression")
             return HP2Item(name, ItemClassification.progression, self.item_name_to_id[name], self.player)
-        if tokekn_lvup_table.get(name) is not None:
+        if name in tokekn_lvup_table:
             #print(f"{name}: is useful")
             return HP2Item(name, ItemClassification.useful, self.item_name_to_id[name], self.player)
         #print(f"{name}: is none")
@@ -383,35 +389,35 @@ class HuniePop2(World):
                 self.multiworld.itempool.append(self.create_item(f"Unlock Girl({girl})"))
 
             if not self.options.disable_baggage.value:
-                self.multiworld.itempool.append(self.create_item(f"{girl} baggage 1"))
-                self.multiworld.itempool.append(self.create_item(f"{girl} baggage 2"))
-                self.multiworld.itempool.append(self.create_item(f"{girl} baggage 3"))
+                self.multiworld.itempool.append(self.create_item(itemgen_to_name[f"{girl} baggage 1"]))
+                self.multiworld.itempool.append(self.create_item(itemgen_to_name[f"{girl} baggage 2"]))
+                self.multiworld.itempool.append(self.create_item(itemgen_to_name[f"{girl} baggage 3"]))
 
-            self.multiworld.itempool.append(self.create_item(f"{girl} shoe item 1"))
-            self.multiworld.itempool.append(self.create_item(f"{girl} shoe item 2"))
-            self.multiworld.itempool.append(self.create_item(f"{girl} shoe item 3"))
-            self.multiworld.itempool.append(self.create_item(f"{girl} shoe item 4"))
+            self.multiworld.itempool.append(self.create_item(itemgen_to_name[f"{girl} shoe item 1"]))
+            self.multiworld.itempool.append(self.create_item(itemgen_to_name[f"{girl} shoe item 2"]))
+            self.multiworld.itempool.append(self.create_item(itemgen_to_name[f"{girl} shoe item 3"]))
+            self.multiworld.itempool.append(self.create_item(itemgen_to_name[f"{girl} shoe item 4"]))
 
-            self.multiworld.itempool.append(self.create_item(f"{girl} unique item 1"))
-            self.multiworld.itempool.append(self.create_item(f"{girl} unique item 2"))
-            self.multiworld.itempool.append(self.create_item(f"{girl} unique item 3"))
-            self.multiworld.itempool.append(self.create_item(f"{girl} unique item 4"))
+            self.multiworld.itempool.append(self.create_item(itemgen_to_name[f"{girl} unique item 1"]))
+            self.multiworld.itempool.append(self.create_item(itemgen_to_name[f"{girl} unique item 2"]))
+            self.multiworld.itempool.append(self.create_item(itemgen_to_name[f"{girl} unique item 3"]))
+            self.multiworld.itempool.append(self.create_item(itemgen_to_name[f"{girl} unique item 4"]))
 
             if not self.options.disable_outfits.value:
                 if not(girl == "abia" or girl == "nora" or girl == "zoey"):
-                    self.multiworld.itempool.append(self.create_item(f"{girl} outfit item 1"))
+                    self.multiworld.itempool.append(self.create_item(itemgen_to_name[f"{girl} outfit item 1"]))
                 if girl == "abia" or girl == "nora" or girl == "zoey" or girl == "polly":
-                    self.multiworld.itempool.append(self.create_item(f"{girl} outfit item 2"))
-                self.multiworld.itempool.append(self.create_item(f"{girl} outfit item 3"))
+                    self.multiworld.itempool.append(self.create_item(itemgen_to_name[f"{girl} outfit item 2"]))
+                self.multiworld.itempool.append(self.create_item(itemgen_to_name[f"{girl} outfit item 3"]))
                 if girl != "polly":
-                    self.multiworld.itempool.append(self.create_item(f"{girl} outfit item 4"))
+                    self.multiworld.itempool.append(self.create_item(itemgen_to_name[f"{girl} outfit item 4"]))
 
-                self.multiworld.itempool.append(self.create_item(f"{girl} outfit item 5"))
-                self.multiworld.itempool.append(self.create_item(f"{girl} outfit item 6"))
-                self.multiworld.itempool.append(self.create_item(f"{girl} outfit item 7"))
-                self.multiworld.itempool.append(self.create_item(f"{girl} outfit item 8"))
-                self.multiworld.itempool.append(self.create_item(f"{girl} outfit item 9"))
-                self.multiworld.itempool.append(self.create_item(f"{girl} outfit item 10"))
+                self.multiworld.itempool.append(self.create_item(itemgen_to_name[f"{girl} outfit item 5"]))
+                self.multiworld.itempool.append(self.create_item(itemgen_to_name[f"{girl} outfit item 6"]))
+                self.multiworld.itempool.append(self.create_item(itemgen_to_name[f"{girl} outfit item 7"]))
+                self.multiworld.itempool.append(self.create_item(itemgen_to_name[f"{girl} outfit item 8"]))
+                self.multiworld.itempool.append(self.create_item(itemgen_to_name[f"{girl} outfit item 9"]))
+                self.multiworld.itempool.append(self.create_item(itemgen_to_name[f"{girl} outfit item 10"]))
 
 
 
@@ -423,9 +429,24 @@ class HuniePop2(World):
             for token in tokekn_lvup_table:
                 self.multiworld.itempool.append(self.create_item(token))
 
+
         if self.trashitems > 0:
             for i in range(self.trashitems):
                 self.multiworld.itempool.append(self.create_item("nothing"))
+
+
+
+
+        #if self.trashitems > 0:
+        #    for i in range(self.trashitems):
+        #        if self.options.filler_item.value == 1:
+        #            self.multiworld.itempool.append(self.create_item("nothing"))
+        #        elif self.options.filler_item.value == 2:
+        #            self.multiworld.itempool.append(self.create_item("Fruit Seeds"))
+        #        elif self.options.filler_item.value == 3:
+        #            i = randint(69420346,69420420)
+        #            self.trashitemlist.append(i)
+        #            self.multiworld.itempool.append(self.create_item(self.item_id_to_name[i]))
 
 
 
@@ -528,5 +549,7 @@ class HuniePop2(World):
             returndict["polly"] = 0
         else:
             returndict["polly"] = 1
+
+
 
         return returndict

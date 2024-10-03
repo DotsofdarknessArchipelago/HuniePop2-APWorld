@@ -12,8 +12,10 @@ F8 will bring up a console to interact with AP server and view logs
 
 Locations checked:
  - progressing the pair to attracted/lovers (2 per pair, 24 in total)
- - all questions that give a favorite answer (20 per girl, 240 in total)
+ - all questions that give a favorite answer (20 per girl, 240 in total) (CAN BE DISABLED IN OPTIONS)
  - giving each girls unique/shoe gift (4 unique, 4 shoe per girl, 48 total)
+ - Archipelago shop items (number depends on options you setup the game with, generation may add shop locations to satisfy the location requirement for the APWorld) (CAN BE CONFIGURED IN OPTIONS)
+ - unlocking outfits though dates(5 per girl, 60 total) (CAN BE DISABLED IN OPTIONS)
  - beating the nymphojinn will release all items
 
 items implemented: (Note you start with 2 pairs and 4 girls unlocked)
@@ -23,8 +25,4 @@ items implemented: (Note you start with 2 pairs and 4 girls unlocked)
  - fairy wings (24 in total) (Note you need all 24 of these to access the nymphojinn fight)
  - talent/romance/flirtation/sexual/passion/style token level up items (4 for talent/romance/flirtation/sexual, 8 for passion/style, 32 total) (Note you can not level up these any other way)
  - baggage for each girl (3 per girl, 36 total)
-
-Stuff NOT implemented at the moment:
-- options for setting up the world
-- location checks/items for outfits
-- having archipelago items in store
+ - outfits (10 per girl, 120 total) (CAN BE DISABLED IN OPTIONS)

@@ -124,15 +124,15 @@ class puzzle_moves(Range):
     range_end = 999
     default = 25
 
-#class filler_item(Range):
-#    """how filler item is handled by making them all either:
-#    1:nothing items,
-#    2:random seed item,
-#    3:random date gift"""
-#    display_name = "filler item"
-#    range_start = 1
-#    range_end = 3
-#    default = 1
+class filler_item(Range):
+    """how the filler item is handled by making them all either:
+    1:nothing items,
+    2:random seed item,
+    3:random date gift"""
+    display_name = "filler item"
+    range_start = 1
+    range_end = 3
+    default = 3
 
 
 @dataclass
@@ -153,4 +153,4 @@ class HP2Options(PerGameCommonOptions):
     puzzle_goal_boss: puzzle_goal_boss
     disable_outfits: disable_outfits
     puzzle_moves: puzzle_moves
-    #filler_item: filler_item
+    filler_item: filler_item

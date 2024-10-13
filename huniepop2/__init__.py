@@ -13,7 +13,7 @@ from ..generic.Rules import  set_rule
 
 class HuniePop2(World):
     game = "Hunie Pop 2"
-    worldversion = "0.5.0"
+    worldversion = "0.6.0"
     item_name_to_id = item_table
     item_id_to_name = {item_table[name]: name for name in item_table}
     item_name_groups = {
@@ -29,7 +29,6 @@ class HuniePop2(World):
     startinggirls = []
     shopslots = 0
     trashitems = 0
-    trashitemlist = []
 
 
     location_name_to_id = location_table
@@ -430,23 +429,22 @@ class HuniePop2(World):
                 self.multiworld.itempool.append(self.create_item(token))
 
 
-        if self.trashitems > 0:
-            for i in range(self.trashitems):
-                self.multiworld.itempool.append(self.create_item("nothing"))
-
-
-
-
         #if self.trashitems > 0:
         #    for i in range(self.trashitems):
-        #        if self.options.filler_item.value == 1:
-        #            self.multiworld.itempool.append(self.create_item("nothing"))
-        #        elif self.options.filler_item.value == 2:
-        #            self.multiworld.itempool.append(self.create_item("Fruit Seeds"))
-        #        elif self.options.filler_item.value == 3:
-        #            i = randint(69420346,69420420)
-        #            self.trashitemlist.append(i)
-        #            self.multiworld.itempool.append(self.create_item(self.item_id_to_name[i]))
+        #        self.multiworld.itempool.append(self.create_item("nothing"))
+
+
+
+
+        if self.trashitems > 0:
+            for i in range(self.trashitems):
+                if self.options.filler_item.value == 1:
+                    self.multiworld.itempool.append(self.create_item("nothing"))
+                elif self.options.filler_item.value == 2:
+                    self.multiworld.itempool.append(self.create_item("Fruit Seeds"))
+                elif self.options.filler_item.value == 3:
+                    i = randint(69420346,69420420)
+                    self.multiworld.itempool.append(self.create_item(self.item_id_to_name[i]))
 
 
 

@@ -13,7 +13,7 @@ from ..generic.Rules import  set_rule
 
 class HuniePop2(World):
     game = "Hunie Pop 2"
-    worldversion = "0.6.0"
+    worldversion = "0.6.1"
     item_name_to_id = item_table
     item_id_to_name = {item_table[name]: name for name in item_table}
     item_name_groups = {
@@ -79,8 +79,8 @@ class HuniePop2(World):
 
 
     def generate_early(self):
-        numpairs = self.options.number_of_staring_pairs.value
-        numgirls = self.options.number_of_staring_girls.value
+        numpairs = self.options.number_of_starting_pairs.value
+        numgirls = self.options.number_of_starting_girls.value
 
         self.startingpairs = []
         self.startinggirls = []

@@ -137,8 +137,8 @@ class filler_item(Range):
 
 @dataclass
 class HP2Options(PerGameCommonOptions):
-    number_of_staring_girls: starting_girls
-    number_of_staring_pairs: starting_pairs
+    number_of_starting_girls: starting_girls
+    number_of_starting_pairs: starting_pairs
     number_blue_seed: starting_seed_blue
     number_green_seed: starting_seed_green
     number_orange_seed: starting_seed_orange

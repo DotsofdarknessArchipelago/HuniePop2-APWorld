@@ -1,6 +1,6 @@
 from random import randint
 
-from BaseClasses import ItemClassification, Region
+from BaseClasses import ItemClassification, Region, LocationProgressType
 from worlds.AutoWorld import World
 from .Items import item_table, HP2Item, fairy_wings_table, gift_unique_table, girl_unlock_table, pair_unlock_table, \
     tokekn_lvup_table, gift_shoe_table, baggage_table, outfits_table, itemgen_to_name
@@ -13,7 +13,7 @@ from ..generic.Rules import  set_rule
 
 class HuniePop2(World):
     game = "Hunie Pop 2"
-    worldversion = "0.6.1"
+    worldversion = "0.7.0"
     item_name_to_id = item_table
     item_id_to_name = {item_table[name]: name for name in item_table}
     item_name_groups = {
@@ -455,6 +455,11 @@ class HuniePop2(World):
 
         set_rules(self.multiworld, self.player, self.girls_enabled, self.pairs_enabled, self.startingpairs, self.options.enable_questions.value, self.options.disable_outfits.value)
 
+        if self.shopslots > self.options.exclude_shop_items:
+            for i in range(self.shopslots):
+                if i>=self.options.exclude_shop_items:
+                    self.multiworld.get_location(f"shop_location: {i+1}", self.player).progress_type = LocationProgressType.EXCLUDED
+
         if self.options.lovers_instead_wings.value:
             boss = set()
             for pair in self.pairs_enabled:
@@ -485,6 +490,7 @@ class HuniePop2(World):
             "affection_add": self.options.puzzle_goal_add.value,
             "boss_affection": self.options.puzzle_goal_boss.value,
             "start_moves": self.options.puzzle_moves.value,
+            "hide_shop_numbers": self.options.hide_shop_item_number.value,
             "world_version": self.worldversion
         }
 

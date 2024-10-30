@@ -57,6 +57,18 @@ class shop_items(Range):
     range_end = 494
     default = 0
 
+class exclude_shop_items(Range):
+    """shop items after the number set will be excluded from having progression items in them. will do nothing if set higher than the number of shop items"""
+    display_name = "shop location exclude start"
+    range_start = 0
+    range_end = 495
+    default = 20
+
+class hide_shop_item_number(Toggle):
+    """shop items after the number set will be excluded from having progression items in them"""
+    display_name = "hide shop item numbers"
+    default = False
+
 class enable_question_locations(Toggle):
     """enable having items locked behind asking girls their favourite stuff Note if there is not enough locations for items it will add shop locations to satisfy the locations needed"""
     display_name = "fav questions have items"
@@ -154,3 +166,5 @@ class HP2Options(PerGameCommonOptions):
     disable_outfits: disable_outfits
     puzzle_moves: puzzle_moves
     filler_item: filler_item
+    exclude_shop_items: exclude_shop_items
+    hide_shop_item_number: hide_shop_item_number

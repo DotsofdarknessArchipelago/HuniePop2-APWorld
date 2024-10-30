@@ -13,7 +13,7 @@ from ..generic.Rules import  set_rule
 
 class HuniePop2(World):
     game = "Hunie Pop 2"
-    worldversion = "0.7.0"
+    worldversion = "0.7.1"
     item_name_to_id = item_table
     item_id_to_name = {item_table[name]: name for name in item_table}
     item_name_groups = {

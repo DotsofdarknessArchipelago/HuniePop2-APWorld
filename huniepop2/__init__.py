@@ -490,7 +490,7 @@ class HuniePop2(World):
             "affection_add": self.options.puzzle_goal_add.value,
             "boss_affection": self.options.puzzle_goal_boss.value,
             "start_moves": self.options.puzzle_moves.value,
-            "hide_shop_numbers": self.options.hide_shop_item_number.value,
+            "hide_shop_item_details": self.options.hide_shop_item_details.value,
             "world_version": self.worldversion
         }
 

@@ -64,9 +64,9 @@ class exclude_shop_items(Range):
     range_end = 495
     default = 20
 
-class hide_shop_item_number(Toggle):
-    """shop items after the number set will be excluded from having progression items in them"""
-    display_name = "hide shop item numbers"
+class hide_shop_item_details(Toggle):
+    """hide shop item id and item progression category"""
+    display_name = "hide shop item details"
     default = False
 
 class enable_question_locations(Toggle):
@@ -167,4 +167,4 @@ class HP2Options(PerGameCommonOptions):
     puzzle_moves: puzzle_moves
     filler_item: filler_item
     exclude_shop_items: exclude_shop_items
-    hide_shop_item_number: hide_shop_item_number
+    hide_shop_item_details: hide_shop_item_details

@@ -58,7 +58,8 @@ class shop_items(Range):
     default = 0
 
 class exclude_shop_items(Range):
-    """shop items after the number set will be excluded from having progression items in them. will do nothing if set higher than the number of shop items"""
+    """shop items after the number set will be excluded from having progression items in them. will do nothing if set higher than the number of shop items, 
+    NOTE will cause world generation to fail if number is set too low as there will be not enough location slots for progression items"""
     display_name = "shop location exclude start"
     range_start = 0
     range_end = 495

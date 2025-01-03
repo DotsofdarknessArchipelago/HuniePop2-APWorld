@@ -13,7 +13,7 @@ from ..generic.Rules import  set_rule
 
 class HuniePop2(World):
     game = "Hunie Pop 2"
-    worldversion = "1.0.0"
+    worldversion = "1.1.0"
     item_name_to_id = item_table
     item_id_to_name = {item_table[name]: name for name in item_table}
     item_name_groups = {
@@ -202,6 +202,10 @@ class HuniePop2(World):
 
         for pair in pair_girls:
             self.pairs_enabled.add(pair[0])
+
+        if len(pair_girls) < self.options.boss_wings_requirement.value:
+            print(f"ENABLED PAIRS LESS THAN BOSS WING REQUIREMENT SETTING VALUE TO MATCH NUMBER OF PAIRS:{len(pair_girls)}")
+            self.options.boss_wings_requirement.value = len(pair_girls)
 
         #get random number of pairs based on what's set in options
         temppairs = pair_girls.copy()
@@ -471,7 +475,7 @@ class HuniePop2(World):
             wings = set()
             for pair in self.pairs_enabled:
                 wings.add(f"Fairy Wings {pair}")
-            set_rule(self.multiworld.get_entrance("hub-boss", self.player), lambda state: state.has_all(wings, self.player))
+            set_rule(self.multiworld.get_entrance("hub-boss", self.player), lambda state: state.has_from_list(wings, self.player, self.options.boss_wings_requirement.value))
 
 
         #visualize_regions(self.multiworld.get_region("Menu", self.player), "my_world.puml")
@@ -491,7 +495,9 @@ class HuniePop2(World):
             "boss_affection": self.options.puzzle_goal_boss.value,
             "start_moves": self.options.puzzle_moves.value,
             "hide_shop_item_details": self.options.hide_shop_item_details.value,
-            "world_version": self.worldversion
+            "world_version": self.worldversion,
+            "outfit_date_complete": self.options.outfits_require_date_completion.value,
+            "boss_wing_requirement": self.options.boss_wings_requirement.value
         }
 
         if "lola" in self.girls_enabled:

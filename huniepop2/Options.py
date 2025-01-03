@@ -147,6 +147,19 @@ class filler_item(Range):
     range_end = 3
     default = 3
 
+class outfits_require_date_completion(Toggle):
+    """require date to be successfully completed before outfit can be unlocked"""
+    display_name = "outfit require date completion"
+    default = False
+
+class boss_wings_requirement(Range):
+    """number of wings required to access the boss
+    NOTE: Asking Kyu about the wings will show you the amount of wings needed"""
+    display_name = "boss wing requirement"
+    range_start = 1
+    range_end = 24
+    default = 24
+
 
 @dataclass
 class HP2Options(PerGameCommonOptions):
@@ -169,3 +182,5 @@ class HP2Options(PerGameCommonOptions):
     filler_item: filler_item
     exclude_shop_items: exclude_shop_items
     hide_shop_item_details: hide_shop_item_details
+    outfits_require_date_completion: outfits_require_date_completion
+    boss_wings_requirement: boss_wings_requirement

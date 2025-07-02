@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from Options import PerGameCommonOptions, Range, Toggle, OptionSet, Visibility
+from Options import PerGameCommonOptions, Range, Toggle, OptionSet, Visibility, Choice
 
 
 class starting_pairs(Range):
@@ -160,6 +160,28 @@ class boss_wings_requirement(Range):
     range_end = 24
     default = 24
 
+class player_gender(Choice):
+    """sets the players gender in game"""
+    display_name = "player gender"
+    option_male = 0
+    option_female = 1
+    default = 0
+
+class polly_gender(Choice):
+    """sets pollys gender in game"""
+    display_name = "polly gender"
+    option_innie = 0
+    option_outie = 1
+    default = 0
+
+class game_difficulty(Choice):
+    """sets the client game difficulty"""
+    display_name = "game client difficulty"
+    option_chad = 0
+    option_average_guy = 1
+    option_incel = 2
+    default = 1
+
 
 @dataclass
 class HP2Options(PerGameCommonOptions):
@@ -184,3 +206,6 @@ class HP2Options(PerGameCommonOptions):
     hide_shop_item_details: hide_shop_item_details
     outfits_require_date_completion: outfits_require_date_completion
     boss_wings_requirement: boss_wings_requirement
+    player_gender:player_gender
+    polly_gender:polly_gender
+    game_difficulty:game_difficulty
